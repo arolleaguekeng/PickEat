@@ -1,4 +1,4 @@
 package cm.pam.pickeat.model
 
-class PublicationModel {
+data class PublicationModel(var a:String) {
 }
