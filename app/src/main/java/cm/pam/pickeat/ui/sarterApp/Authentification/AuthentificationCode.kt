@@ -7,6 +7,6 @@ import cm.pam.pickeat.R
 class AuthentificationCode : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_authentification_code)
+        setContentView(R.layout.activity_authetification_code)
     }
 }

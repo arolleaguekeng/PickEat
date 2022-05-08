@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <CheckBox
+        android:id="@+id/cameroonian"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:labelFor="@id/country_1"
+        android:tag="cameroonian"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        tools:layout_editor_absoluteX="29dp" />
+
+    <TextView
+        android:id="@+id/country_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cameroonian"
+        app:layout_constraintBottom_toBottomOf="@+id/cameroonian"
+        app:layout_constraintStart_toEndOf="@+id/cameroonian"
+        app:layout_constraintTop_toTopOf="@+id/cameroonian" />
+
+    <CheckBox
+        android:id="@+id/chinese"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        android:tag="chinese"
+        app:layout_constraintEnd_toEndOf="@+id/cameroonian"
+        app:layout_constraintStart_toStartOf="@+id/cameroonian"
+        app:layout_constraintTop_toBottomOf="@+id/cameroonian" />
+
+    <TextView
+        android:id="@+id/country_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chinese"
+        app:layout_constraintBottom_toBottomOf="@+id/chinese"
+        app:layout_constraintStart_toEndOf="@+id/chinese"
+        app:layout_constraintTop_toTopOf="@+id/chinese" />
+
+
+    <CheckBox
+        android:id="@+id/senegalese"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="7dp"
+        android:tag="senegalese"
+        app:layout_constraintEnd_toEndOf="@+id/chinese"
+        app:layout_constraintStart_toStartOf="@+id/chinese"
+        app:layout_constraintTop_toBottomOf="@+id/chinese" />
+
+    <CheckBox
+        android:id="@+id/congolese"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:tag="congolese"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/senegalese"
+        app:layout_constraintStart_toStartOf="@+id/senegalese"
+        app:layout_constraintTop_toBottomOf="@+id/senegalese" />
+
+    <TextView
+        android:id="@+id/country_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Senegalese"
+        app:layout_constraintBottom_toBottomOf="@+id/senegalese"
+        app:layout_constraintStart_toEndOf="@+id/senegalese"
+        app:layout_constraintTop_toTopOf="@+id/senegalese" />
+
+    <TextView
+        android:id="@+id/country_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:text="Congolese"
+        app:layout_constraintBottom_toBottomOf="@+id/congolese"
+        app:layout_constraintStart_toEndOf="@+id/congolese"
+        app:layout_constraintTop_toTopOf="@+id/congolese" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Countries"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

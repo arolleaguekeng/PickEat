@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <CheckBox
+        android:id="@+id/sweet"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:labelFor="@id/flavor_1"
+        android:tag="sweet"
+        app:layout_constraintEnd_toEndOf="@+id/spicy"
+        app:layout_constraintStart_toStartOf="@+id/spicy"
+        app:layout_constraintTop_toBottomOf="@+id/spicy" />
+
+    <TextView
+        android:id="@+id/flavor_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sweet"
+        app:layout_constraintBottom_toBottomOf="@+id/sweet"
+        app:layout_constraintStart_toEndOf="@+id/sweet"
+        app:layout_constraintTop_toTopOf="@+id/sweet" />
+
+
+    <CheckBox
+        android:id="@+id/spicy"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:tag="spicy"
+        app:layout_constraintEnd_toStartOf="@+id/textView11"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/flavor_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spicy"
+        app:layout_constraintBottom_toBottomOf="@+id/spicy"
+        app:layout_constraintStart_toEndOf="@+id/spicy"
+        app:layout_constraintTop_toTopOf="@+id/spicy" />
+
+
+    <CheckBox
+        android:id="@+id/acid"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:tag="acid"
+        app:layout_constraintBottom_toBottomOf="@+id/sweet"
+        app:layout_constraintEnd_toEndOf="@+id/salt"
+        app:layout_constraintStart_toStartOf="@+id/salt"
+        app:layout_constraintTop_toTopOf="@+id/sweet" />
+
+    <TextView
+        android:id="@+id/flavor_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="16dp"
+        android:text="Acid"
+        app:layout_constraintBottom_toBottomOf="@+id/acid"
+        app:layout_constraintStart_toStartOf="@+id/acid"
+        app:layout_constraintTop_toTopOf="@+id/acid" />
+
+    <CheckBox
+        android:id="@+id/salt"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:tag="salt"
+        app:layout_constraintBottom_toBottomOf="@+id/spicy"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toTopOf="@+id/spicy"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/flavor_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="Salt"
+        app:layout_constraintBottom_toTopOf="@+id/acid"
+        app:layout_constraintStart_toEndOf="@+id/salt"
+        app:layout_constraintTop_toTopOf="@+id/salt" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Flavor"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.377"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

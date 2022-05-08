@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "596132813142",
+    "project_id": "pickeat-f9080",
+    "storage_bucket": "pickeat-f9080.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596132813142:android:76baa238cbc4974e015ef7",
+        "android_client_info": {
+          "package_name": "cm.pam.pickeat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "596132813142-3f8a7tdfpojoejturek5cpp2f1f1ike1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUH2tHvYoiQ3mGPCt-x_5i0toQkXC4U2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "596132813142-3f8a7tdfpojoejturek5cpp2f1f1ike1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

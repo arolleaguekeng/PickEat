@@ -2,24 +2,62 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
 
-    <fragment
-        android:id="@+id/navigation_home"
-        android:name="cm.pam.pickeat.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_home"-->
+<!--        android:name="com.example.bottomnavigationbar.home"-->
+<!--        android:label="@string/title_home"-->
+<!--        tools:layout="@layout/fragment_home" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_navigation_home_to_navigation_category"-->
+<!--            app:destination="@id/navigation_category" />-->
+<!--    </fragment>-->
 
-    <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="cm.pam.pickeat.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_favourites"-->
+<!--        android:name="com.example.bottomnavigationbar.favourites"-->
+<!--        android:label="@string/title_favourites"-->
+<!--        tools:layout="@layout/fragment_favourite" />-->
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="cm.pam.pickeat.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_publish"-->
+<!--        android:name="com.example.bottomnavigationbar.publish"-->
+<!--        android:label="@string/title_publish"-->
+<!--        tools:layout="@layout/fragment_publish" />-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_favorite"-->
+<!--        android:name="com.example.bottomnavigationbar.search"-->
+<!--        android:label="@string/title_notification"-->
+<!--        tools:layout="@layout/fragment_notification" />-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_account"-->
+<!--        android:name="com.example.bottomnavigationbar.profile"-->
+<!--        android:label="@string/title_account"-->
+<!--        tools:layout="@layout/fragment_account" />-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_category"-->
+<!--        android:name="com.example.bottomnavigationbar.profile"-->
+<!--        android:label="@string/title_category"-->
+<!--        tools:layout="@layout/fragment_category">-->
+<!--        <action-->
+<!--            android:id="@+id/action_navigation_category_to_navigation_menu"-->
+<!--            app:destination="@id/navigation_menu" />-->
+<!--    </fragment>-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_menu"-->
+<!--        android:name="com.example.bottomnavigationbar.profile"-->
+<!--        android:label="@string/title_meal"-->
+<!--        tools:layout="@layout/fragment_menu_search"/>-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_publication"-->
+<!--        android:name="com.example.bottomnavigationbar.profile"-->
+<!--        android:label="Publications"-->
+<!--        tools:layout="@layout/fragment_publication"/>-->
 </navigation>

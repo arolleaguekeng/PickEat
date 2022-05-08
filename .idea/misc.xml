@@ -3,8 +3,36 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/projet/PickEat/app/src/main/res/drawable-v24/block_element.xml" value="0.137" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/drawable-v24/cercle.xml" value="0.137" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/drawable-v24/gradient_background.xml" value="0.137" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/drawable-v24/gradient_background2.xml" value="0.137" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/drawable-v24/ic_baseline_add_24.xml" value="0.137" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_add_publication.xml" value="0.1265625" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_authentification_code.xml" value="0.1265625" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_authentification_phone.xml" value="0.1265625" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_authetification_code.xml" value="0.1125" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_login.xml" value="0.1265625" />
         <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_main.xml" value="0.22418478260869565" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_splash.xml" value="0.1265625" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_welcome.xml" value="0.1265625" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/card_home.xml" value="0.275" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/category_items.xml" value="0.275" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/category_small_itmes.xml" value="0.275" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/circlefriend.xml" value="0.1265625" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/flavor.xml" value="0.1265625" />
         <entry key="..\:/projet/PickEat/app/src/main/res/layout/fragment_category.xml" value="0.22644927536231885" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/fragment_filter.xml" value="0.8" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/fragment_home.xml" value="0.1265625" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/fragment_menu_search.xml" value="0.1265625" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/fragment_notifications.xml" value="0.275" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/fragment_profile.xml" value="0.1265625" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/fragment_publication.xml" value="0.136" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/menu_card.xml" value="0.1265625" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/publication_item.xml" value="0.1265625" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/menu/bottom_nav_menu.xml" value="0.4" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/menu/menu_photo.xml" value="0.275" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/xml/root_preferences.xml" value="0.1265625" />
       </map>
     </option>
   </component>

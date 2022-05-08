@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_profile"
+        android:layout_width="187dp"
+        android:layout_height="192dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/circle_shape"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/newUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/round_edit_text"
+        android:hint="Enter your new User name"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="27sp"
+        app:layout_constraintEnd_toEndOf="@+id/user_profile"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="@+id/user_profile"
+        app:layout_constraintTop_toBottomOf="@+id/user_profile" />
+
+    <EditText
+        android:id="@+id/userDistrict"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/round_edit_text"
+        android:hint="Enter your new User name"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="27sp"
+        app:layout_constraintEnd_toEndOf="@+id/newUsername"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/newUsername"
+        app:layout_constraintTop_toBottomOf="@+id/newUsername" />
+
+    <EditText
+        android:id="@+id/userCity"
+        android:layout_width="167dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/round_edit_text"
+        android:hint="Enter your city"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="27sp"
+        app:layout_constraintEnd_toEndOf="@+id/userDistrict"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/userDistrict"
+        app:layout_constraintTop_toBottomOf="@+id/userDistrict" />
+
+    <Button
+        android:id="@+id/save_profile"
+        android:layout_width="130dp"
+        android:layout_height="67dp"
+        android:text="Save"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cancel_profile"
+        app:layout_constraintEnd_toEndOf="@+id/newUsername"
+        app:layout_constraintTop_toTopOf="@+id/cancel_profile"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/cancel_profile"
+        android:layout_width="130dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="32dp"
+        android:text="Cancel"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/userDistrict"
+        app:layout_constraintTop_toBottomOf="@+id/userCity" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

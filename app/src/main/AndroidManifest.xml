@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PickEat">
         <activity
+            android:name=".AuthetificationCode"
+            android:exported="false" />
+        <activity
+            android:name=".AuthentificationPhone"
+            android:exported="false" />
+        <activity
             android:name=".ui.sarterApp.Authentification.AuthentificationCode"
             android:exported="false" />
         <activity
