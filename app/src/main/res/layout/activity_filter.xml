@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Filter">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:padding="15dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/complementTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Complements"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/complementOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/complementTitle"
+                android:layout_marginTop="20dp"
+                android:background="@android:drawable/editbox_background"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:drawablePadding="16dp"
+                android:hint="Select Complement"
+                android:padding="12dp" />
+
+            <TextView
+                android:id="@+id/nutrientTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/complementOption"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="0dp"
+                android:text="Nutrients"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/nutrientOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nutrientTitle"
+                android:layout_marginTop="20dp"
+                android:background="@android:drawable/editbox_background"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:drawablePadding="16dp"
+                android:hint="Select Nutrients"
+                android:padding="12dp" />
+
+            <TextView
+                android:id="@+id/regionTitle"
+                android:layout_below="@+id/nutrientOption"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Regions"
+                android:layout_marginTop="30dp"
+                android:textColor="@android:color/black"
+                android:textSize="25sp"/>
+
+            <RadioGroup
+                android:id="@+id/regions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/regionTitle"
+                android:layout_marginTop="20px">
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/flavorTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/regions"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="0dp"
+                android:text="Flavors"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/flavorOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/flavorTitle"
+                android:layout_marginTop="20dp"
+                android:background="@android:drawable/editbox_background"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:drawablePadding="16dp"
+                android:hint="Select Flavors"
+                android:padding="12dp" />
+
+            <TextView
+                android:id="@+id/mealTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/flavorOption"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="0dp"
+                android:text="Type of meal"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/mealOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mealTitle"
+                android:layout_marginTop="20dp"
+                android:background="@android:drawable/editbox_background"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:drawablePadding="16dp"
+                android:hint="Select Type Of Meal"
+                android:padding="12dp" />
+
+            <TextView
+                android:id="@+id/eatingTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mealOption"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="0dp"
+                android:text="Eating system"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/eatingOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/eatingTitle"
+                android:layout_marginTop="20dp"
+                android:background="@android:drawable/editbox_background"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:drawablePadding="16dp"
+                android:hint="Select Your Eating System"
+                android:padding="12dp"
+                android:layout_marginBottom="20dp"/>
+        </RelativeLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
