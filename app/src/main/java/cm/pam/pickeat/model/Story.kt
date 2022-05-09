@@ -3,8 +3,8 @@ import android.os.Parcel
 import android.os.Parcelable
 import java.util.*
 
-data class StoryModel(val authorId: Long, val menuId: Int, val storyId:Int,
-                      var initTime: Date = Date(), val image: String): Parcelable {
+data class Story(val authorId: Long, val menuId: Int, val storyId:Int,
+                 var initTime: Date = Date(), val image: String): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readLong(),
         parcel.readInt(),
@@ -24,12 +24,12 @@ data class StoryModel(val authorId: Long, val menuId: Int, val storyId:Int,
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<StoryModel> {
-        override fun createFromParcel(parcel: Parcel): StoryModel {
-            return StoryModel(parcel)
+    companion object CREATOR : Parcelable.Creator<Story> {
+        override fun createFromParcel(parcel: Parcel): Story {
+            return Story(parcel)
         }
 
-        override fun newArray(size: Int): Array<StoryModel?> {
+        override fun newArray(size: Int): Array<Story?> {
             return arrayOfNulls(size)
         }
     }

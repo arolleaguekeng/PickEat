@@ -1,4 +1,4 @@
-package cm.pam.pickeat.controller.SendNotificationPack
+package cm.pam.pickeat.repository.SendNotificationPack
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

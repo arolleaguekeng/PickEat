@@ -4,8 +4,8 @@ import android.os.Parcelable
 
 
 
-data class MenuRepository(val menuId: Int, val menuName: String,
-                     val description: String, val categoriId: Int): Parcelable {
+data class RestMenu(val menuId: Int, val menuName: String,
+                    val description: String, val categoriId: Int): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString()!!,
@@ -25,12 +25,12 @@ data class MenuRepository(val menuId: Int, val menuName: String,
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<MenuRepository> {
-        override fun createFromParcel(parcel: Parcel): MenuRepository {
-            return MenuRepository(parcel)
+    companion object CREATOR : Parcelable.Creator<RestMenu> {
+        override fun createFromParcel(parcel: Parcel): RestMenu {
+            return RestMenu(parcel)
         }
 
-        override fun newArray(size: Int): Array<MenuRepository?> {
+        override fun newArray(size: Int): Array<RestMenu?> {
             return arrayOfNulls(size)
         }
     }

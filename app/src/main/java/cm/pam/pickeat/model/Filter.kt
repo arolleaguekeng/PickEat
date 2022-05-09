@@ -3,8 +3,8 @@ package cm.pam.pickeat.model
 import android.os.Parcel
 import android.os.Parcelable
 
-class FilterModel(val typeOfMeal: TypeOfMeal?, val region: Region?, val eatingSystem: EatingSystem?,
-val nutrients: List<Nutrient>?, val flavors: List<Flavor>?, val complements: List<Complement>?):Parcelable {
+class Filter(val typeOfMeal: TypeOfMeal?, val region: Region?, val eatingSystem: EatingSystem?,
+             val nutrients: List<Nutrient>?, val flavors: List<Flavor>?, val complements: List<Complement>?):Parcelable {
 
     constructor(parcel: Parcel) : this(
         parcel.readParcelable(TypeOfMeal::class.java.classLoader),
@@ -198,12 +198,12 @@ val nutrients: List<Nutrient>?, val flavors: List<Flavor>?, val complements: Lis
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<FilterModel> {
-        override fun createFromParcel(parcel: Parcel): FilterModel {
-            return FilterModel(parcel)
+    companion object CREATOR : Parcelable.Creator<Filter> {
+        override fun createFromParcel(parcel: Parcel): Filter {
+            return Filter(parcel)
         }
 
-        override fun newArray(size: Int): Array<FilterModel?> {
+        override fun newArray(size: Int): Array<Filter?> {
             return arrayOfNulls(size)
         }
     }

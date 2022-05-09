@@ -5,11 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import cm.pam.pickeat.R
-import cm.pam.pickeat.model.MealModel
+import cm.pam.pickeat.model.Meal
 
 
 
-class MealAdapter(private val mealModels : ArrayList<MealModel>) : RecyclerView.Adapter<MealAdapter.MyViewHolder>() {
+class MealAdapter(private val mealModels : ArrayList<Meal>) : RecyclerView.Adapter<MealAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent : ViewGroup, viewType : Int) : MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.publication_item, parent, false)

@@ -1,5 +1,6 @@
 package cm.pam.pickeat.ui.profile
 
+import Publication
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
@@ -15,25 +16,12 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import cm.pam.pickeat.R
 import cm.pam.pickeat.Service.adapters.PublicationAdapter
-import cm.pam.pickeat.Service.upload.UploadAddress
-import cm.pam.pickeat.Service.upload.UploadUser
-import cm.pam.pickeat.controller.*
 import cm.pam.pickeat.databinding.FragmentProfileBinding
-import cm.pam.pickeat.model.MealModel
-import cm.pam.pickeat.model.PublicationModel
+import cm.pam.pickeat.repository.*
 import cm.pam.pickeat.ui.sarterApp.Authentification.AuthentificationPhone
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.storage.FirebaseStorage
 import java.io.File
 
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProfileFragment : Fragment() {
 
 
@@ -53,11 +41,7 @@ class ProfileFragment : Fragment() {
     }
 
 
-    var publications = arrayListOf<PublicationModel>(
-        PublicationModel(MealModel("Traditional", "Eru", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tristique tellus a nibh pretium, in egestas quam ornare. Nullam ante lorem, fermentum non imperdiet ac, feugiat sollicitudin leo. Quisque elementum luctus erat, ac faucibus nisi finibus eget. Curabitur a interdum neque. Nam bibendum euismod nisl vel volutpat. Duis non nibh ut arcu congue congue ultricies eu nulla. Aenean dignissim enim eu sapien ullamcorper pharetra.", R.drawable.menu1), "Delicious Eru with Garry", R.drawable.menu1, 5.0, 2500.0),
-        PublicationModel(MealModel("Traditional", "Eru", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tristique tellus a nibh pretium, in egestas quam ornare. Nullam ante lorem, fermentum non imperdiet ac, feugiat sollicitudin leo. Quisque elementum luctus erat, ac faucibus nisi finibus eget. Curabitur a interdum neque. Nam bibendum euismod nisl vel volutpat. Duis non nibh ut arcu congue congue ultricies eu nulla. Aenean dignissim enim eu sapien ullamcorper pharetra.", R.drawable.menu1), "Delicious Eru with Garry", R.drawable.menu1, 5.0, 2500.0),
-        PublicationModel(MealModel("Traditional", "Eru", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tristique tellus a nibh pretium, in egestas quam ornare. Nullam ante lorem, fermentum non imperdiet ac, feugiat sollicitudin leo. Quisque elementum luctus erat, ac faucibus nisi finibus eget. Curabitur a interdum neque. Nam bibendum euismod nisl vel volutpat. Duis non nibh ut arcu congue congue ultricies eu nulla. Aenean dignissim enim eu sapien ullamcorper pharetra.", R.drawable.menu1), "Delicious Eru with Garry", R.drawable.menu1, 5.0, 2500.0)
-    )
+    var publications = arrayListOf<Publication>()
 
     lateinit var binding: FragmentProfileBinding
     private val FILE_NAME = "photo.jpg"
@@ -104,7 +88,7 @@ class ProfileFragment : Fragment() {
                     auth.signOut()
                     startActivity(Intent(activity, AuthentificationPhone::class.java))
                 }
-                Toast.makeText(activity, "${currentPhone}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "$currentPhone", Toast.LENGTH_SHORT).show()
                 println("Logout!")
                 true
             }
@@ -136,9 +120,6 @@ class ProfileFragment : Fragment() {
             if(!name.text.isEmpty()){
                 newUserName = name.text.toString()
                 mAlertDialog.dismiss()
-
-                saveInformation()
-
             }
             Toast.makeText(context, "Chose an image !", Toast.LENGTH_LONG*7)
         }
@@ -187,18 +168,5 @@ class ProfileFragment : Fragment() {
             mDialogView.findViewById<ImageView>(R.id.user_profile).setImageURI(data?.data) // handle chosen image
             binding.circleImageView.setImageURI(data?.data)
         }
-    }
-
-    private fun saveInformation(){
-        mStorageRef = FirebaseStorage.getInstance().getReference("users")
-        mODatabaseRef = FirebaseDatabase.getInstance().getReference("users")
-        var city: String = mDialogView.findViewById<EditText>(R.id.userCity).text.toString()
-        var street: String = mDialogView.findViewById<EditText>(R.id.userDistrict).text.toString()
-        var name: String = mDialogView.findViewById<EditText>(R.id.newUsername).text.toString()
-        var uploadAddress: UploadAddress = UploadAddress(city, street)
-        binding.phonenumber.text = "681410728"
-        binding.name.text = name
-        var user = UploadUser(currentPhone, name, "photo", uploadAddress, null, null)
-        mODatabaseRef.child("681410728").setValue(user)
     }
 }

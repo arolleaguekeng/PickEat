@@ -5,9 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import cm.pam.pickeat.controller.AuthentificationController
-import cm.pam.pickeat.controller.auth
-import cm.pam.pickeat.controller.currentPhone
+import cm.pam.pickeat.repository.auth
+import cm.pam.pickeat.repository.currentPhone
 import cm.pam.pickeat.databinding.ActivityAuthentificationPhoneBinding
 import cm.pam.pickeat.ui.home.HomeFragment
 import com.google.firebase.FirebaseException

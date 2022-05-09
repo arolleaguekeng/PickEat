@@ -1,4 +1,4 @@
-package cm.pam.pickeat.controller.SendNotificationPack
+package cm.pam.pickeat.repository.SendNotificationPack
 
 
 import android.app.NotificationManager

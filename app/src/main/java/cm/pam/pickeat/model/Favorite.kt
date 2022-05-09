@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import java.util.*
 
-data class FavoriteModel(val userId: Long, val publicationId: Int, val createdAt: Date):Parcelable {
+data class Favorite(val userId: Long, val publicationId: Int, val createdAt: Date):Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readLong(),
         parcel.readInt(),
@@ -21,12 +21,12 @@ data class FavoriteModel(val userId: Long, val publicationId: Int, val createdAt
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<FavoriteModel> {
-        override fun createFromParcel(parcel: Parcel): FavoriteModel {
-            return FavoriteModel(parcel)
+    companion object CREATOR : Parcelable.Creator<Favorite> {
+        override fun createFromParcel(parcel: Parcel): Favorite {
+            return Favorite(parcel)
         }
 
-        override fun newArray(size: Int): Array<FavoriteModel?> {
+        override fun newArray(size: Int): Array<Favorite?> {
             return arrayOfNulls(size)
         }
     }

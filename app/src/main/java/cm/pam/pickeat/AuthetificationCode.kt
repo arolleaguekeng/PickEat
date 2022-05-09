@@ -8,9 +8,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import cm.pam.pickeat.Service.upload.UploadUser
-import cm.pam.pickeat.controller.*
 import cm.pam.pickeat.databinding.ActivityAuthetificationCodeBinding
+import cm.pam.pickeat.repository.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential
@@ -59,8 +58,6 @@ class AuthetificationCode : AppCompatActivity() {
                 if (task.isSuccessful) {
                     startActivity(Intent(applicationContext, MainActivity::class.java))
 
-                    uploadUser()
-
                     //var file = File("PhoneNumber.txt")
 
                     finish()
@@ -74,11 +71,6 @@ class AuthetificationCode : AppCompatActivity() {
             }
 
 
-    }
-
-    private fun uploadUser(){
-        var user = UploadUser(currentPhone)
-        mODatabaseRef.child(currentPhone).setValue(user)
     }
 
     override fun onRequestPermissionsResult(
@@ -97,7 +89,9 @@ class AuthetificationCode : AppCompatActivity() {
     private fun checkWriteExternalStoragePermission(): Boolean {
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)!=
             PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this, Array<String>(1){ Manifest.permission.WRITE_EXTERNAL_STORAGE },RC_STORAGE_WRITE_PERMS)
+            ActivityCompat.requestPermissions(this, Array<String>(1){ Manifest.permission.WRITE_EXTERNAL_STORAGE },
+                RC_STORAGE_WRITE_PERMS
+            )
             return true
         }
         return false

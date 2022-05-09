@@ -15,9 +15,8 @@ import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import cm.pam.pickeat.*
-import cm.pam.pickeat.model.MenuModel
-import cm.pam.pickeat.model.StoryModel
-import cm.pam.pickeat.repository.MenuRepository
+import cm.pam.pickeat.model.Story
+import cm.pam.pickeat.repository.RestMenu
 import cm.pam.pickeat.repository.RestStory
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -38,7 +37,7 @@ class StoriesActivity : AppCompatActivity(), StoriesProgressView.StoriesListener
     lateinit var imageView: ImageView
     lateinit var button: FloatingActionButton
     lateinit var restStory: RestStory
-    lateinit var selectedMenu: MenuRepository
+    lateinit var selectedMenu: RestMenu
     var images: ArrayList<Bitmap> = ArrayList()
     var pressTime: Long = 0L
     var limit: Long = 500L
@@ -71,7 +70,7 @@ class StoriesActivity : AppCompatActivity(), StoriesProgressView.StoriesListener
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
         WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
-        selectedMenu = intent.getParcelableExtra<MenuRepository>("menu")!!
+        selectedMenu = intent.getParcelableExtra<RestMenu>("menu")!!
         restStory = RestStory()
 
         imageView = findViewById(R.id.image)
@@ -87,7 +86,7 @@ class StoriesActivity : AppCompatActivity(), StoriesProgressView.StoriesListener
         playStory()
     }
 
-    private fun getStory(stories: List<StoryModel>){
+    private fun getStory(stories: List<Story>){
         images = ArrayList()
         stories.forEach {
             if(it.menuId == selectedMenu.menuId)
@@ -173,7 +172,7 @@ class StoriesActivity : AppCompatActivity(), StoriesProgressView.StoriesListener
     private fun saveStory(bitmap: String?){
         try{
             if(bitmap!=null){
-                var story = StoryModel(
+                var story = Story(
                     currentUser!!.phoneNumber,
                     selectedMenu!!.menuId,
                     0,

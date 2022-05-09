@@ -2,16 +2,11 @@ package cm.pam.pickeat
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import cm.pam.pickeat.controller.auth
-import cm.pam.pickeat.controller.currentPhone
-import cm.pam.pickeat.controller.readOnFile
+import cm.pam.pickeat.repository.auth
+import cm.pam.pickeat.repository.currentPhone
+import cm.pam.pickeat.repository.readOnFile
 import cm.pam.pickeat.databinding.ActivityMainBinding
 import cm.pam.pickeat.ui.favori.FavoryFragment
 import cm.pam.pickeat.ui.home.HomeFragment
