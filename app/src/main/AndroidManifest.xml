@@ -25,7 +25,7 @@
             android:name=".ui.sarterApp.Welcome"
             android:exported="false" />
         <activity
-            android:name=".ui.sarterApp.Authentification"
+            android:name=".SendNotif"
             android:exported="false" />
         <activity
             android:name=".ui.sarterApp.Splash"
@@ -36,7 +36,6 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

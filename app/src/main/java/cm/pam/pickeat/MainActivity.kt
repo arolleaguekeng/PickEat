@@ -41,8 +41,10 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
         else{
-            title=resources.getString(R.string.title_home)
-            loadFragment(HomeFragment())
+//            title=resources.getString(R.string.title_home)
+//            loadFragment(HomeFragment())
+            startActivity(Intent(applicationContext, SendNotif::class.java))
+            finish()
         }
 
         binding.bottomNav.setOnNavigationItemSelectedListener {

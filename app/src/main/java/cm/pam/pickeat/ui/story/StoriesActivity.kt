@@ -17,6 +17,7 @@ import androidx.annotation.RequiresApi
 import cm.pam.pickeat.*
 import cm.pam.pickeat.model.MenuModel
 import cm.pam.pickeat.model.StoryModel
+import cm.pam.pickeat.repository.MenuRepository
 import cm.pam.pickeat.repository.RestStory
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -37,7 +38,7 @@ class StoriesActivity : AppCompatActivity(), StoriesProgressView.StoriesListener
     lateinit var imageView: ImageView
     lateinit var button: FloatingActionButton
     lateinit var restStory: RestStory
-    lateinit var selectedMenu: MenuModel
+    lateinit var selectedMenu: MenuRepository
     var images: ArrayList<Bitmap> = ArrayList()
     var pressTime: Long = 0L
     var limit: Long = 500L
@@ -70,7 +71,7 @@ class StoriesActivity : AppCompatActivity(), StoriesProgressView.StoriesListener
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
         WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
-        selectedMenu = intent.getParcelableExtra<MenuModel>("menu")!!
+        selectedMenu = intent.getParcelableExtra<MenuRepository>("menu")!!
         restStory = RestStory()
 
         imageView = findViewById(R.id.image)

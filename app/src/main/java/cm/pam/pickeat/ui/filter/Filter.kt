@@ -3,12 +3,13 @@ package net.tipam2022.storiesview
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.airbnb.paris.extensions.style
+//import com.airbnb.paris.extensions.style
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import cm.pam.pickeat.R
 //for constraint radioGroup
 //import `in`.daemondhruv.customviewgroup.ConstraintRadioGroup
 import java.lang.StringBuilder
@@ -84,12 +85,12 @@ class Filter : AppCompatActivity() {
         singleOptionBuilder(systemTextView, systemArray, "Select Your Eating System")
     }
     private fun initializeRadioOption(view: RadioGroup, options:List<String>){
-        for (i in 0..options.size - 1){
-            var radio = RadioButton(this)
-            radio.setText(options[i])
-            radio.style(R.style.chip_style)
-            view.addView(radio)
-        }
+//        for (i in 0..options.size - 1){
+//            var radio = RadioButton(this)
+//            radio.setText(options[i])
+//            radio.style(R.style.chip_style)
+//            view.addView(radio)
+//        }
     }
 
     private fun multiOptionsBuilder(view: TextView, options:Array<String>,
