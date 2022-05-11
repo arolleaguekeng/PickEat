@@ -31,16 +31,15 @@ class MainActivity : AppCompatActivity() {
         var file = File("PhoneNumber.txt")
         currentPhone = readOnFile(this, file)
 
-        if (currentUer == null) {
-            startActivity(Intent(applicationContext, AuthentificationPhone::class.java))
+        /*if (currentUer == null) {
+            startActivity(Intent(applicationContext, MainActivity::class.java))
             finish()
         }
-        else{
+        else{*/
 //            title=resources.getString(R.string.title_home)
-//            loadFragment(HomeFragment())
-            startActivity(Intent(applicationContext, SendNotif::class.java))
-            finish()
-        }
+          loadFragment(HomeFragment())
+
+       /* }*/
 
         binding.bottomNav.setOnNavigationItemSelectedListener {
             when(it.itemId){

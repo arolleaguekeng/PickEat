@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/activity_main.xml" value="0.1408514492753623" />
+        <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/activity_splash.xml" value="0.21784420289855072" />
+        <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/card_home.xml" value="0.1408514492753623" />
+        <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/fragment_category_list.xml" value="0.1408514492753623" />
+        <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/fragment_filter.xml" value="0.21784420289855072" />
+        <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/fragment_followers_list.xml" value="0.21784420289855072" />
+        <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/fragment_following_list.xml" value="0.21784420289855072" />
+        <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/fragment_friend_list.xml" value="0.21784420289855072" />
+        <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/fragment_home.xml" value="0.1408514492753623" />
+        <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/fragment_profile.xml" value="0.21784420289855072" />
+        <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/fragment_publication.xml" value="0.21784420289855072" />
         <entry key="..\:/projet/PickEat/app/src/main/res/drawable-v24/block_element.xml" value="0.137" />
         <entry key="..\:/projet/PickEat/app/src/main/res/drawable-v24/cercle.xml" value="0.137" />
         <entry key="..\:/projet/PickEat/app/src/main/res/drawable-v24/gradient_background.xml" value="0.137" />
@@ -44,7 +55,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
