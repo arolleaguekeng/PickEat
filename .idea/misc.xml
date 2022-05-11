@@ -5,8 +5,10 @@
       <map>
         <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/activity_main.xml" value="0.1408514492753623" />
         <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/activity_splash.xml" value="0.21784420289855072" />
+        <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/card_commentaire.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/card_home.xml" value="0.1408514492753623" />
         <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/fragment_category_list.xml" value="0.1408514492753623" />
+        <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/fragment_commentaire.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/fragment_filter.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/fragment_followers_list.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/yayzo/AndroidStudioProjects/PickEat2.0/app/src/main/res/layout/fragment_following_list.xml" value="0.21784420289855072" />
