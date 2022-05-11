@@ -1,7 +1,7 @@
 --NB: Toutes ses fonctions retournent des object json--
 --Fonction d'affichage des informations sur la categories--
 
-CREATE OR REPLACE FUNCTION public.info_categorie(
+CREATE OR REPLACE FUNCTION info_categorie(
 	"CATEGORIE_ID" integer)
     RETURNS json
     LANGUAGE 'sql'
@@ -15,15 +15,15 @@ FROM (SELECT *
 )info_cat;
 $BODY$;
 
-ALTER FUNCTION public.info_categorie(integer)
+ALTER FUNCTION info_categorie(integer)
     OWNER TO postgres;
 
-COMMENT ON FUNCTION public.info_categorie(integer)
+COMMENT ON FUNCTION info_categorie(integer)
     IS 'Selection des informations complete d''une categorie';
 	
 --Fonction d'afffichage des informations sur la publication--
 
-CREATE OR REPLACE FUNCTION public.info_publication(
+CREATE OR REPLACE FUNCTION info_publication(
 	"ID_PUBLICATION" integer)
     RETURNS json
     LANGUAGE 'sql'
@@ -55,15 +55,15 @@ FROM (SELECT pb."publicationId",
 	)information;
 $BODY$;
 
-ALTER FUNCTION public.info_publication(integer)
+ALTER FUNCTION info_publication(integer)
     OWNER TO postgres;
 
-COMMENT ON FUNCTION public.info_publication(integer)
+COMMENT ON FUNCTION info_publication(integer)
     IS 'Selection des informations complete d''une publication';
 
 --Ffonction d'affichage des informations sur le user--
 
-CREATE OR REPLACE FUNCTION public.info_user(
+CREATE OR REPLACE FUNCTION info_user(
 	"PHONE_NUMBER" numeric)
     RETURNS json
     LANGUAGE 'sql'
@@ -85,15 +85,15 @@ FROM (SELECT us."phoneNumber" AS phone,
 	)infos;
 $BODY$;
 
-ALTER FUNCTION public.info_user(numeric)
+ALTER FUNCTION info_user(numeric)
     OWNER TO postgres;
 
-COMMENT ON FUNCTION public.info_user(numeric)
+COMMENT ON FUNCTION info_user(numeric)
     IS 'Selection des informations complete d''un user';
 	
 --Fonction d'affichage de la liste des abonné a un utilisateur--
 
-CREATE OR REPLACE FUNCTION public.list_abonnebyuser(
+CREATE OR REPLACE FUNCTION list_abonnebyuser(
 	"PHONE_NUMBER" numeric)
     RETURNS json
     LANGUAGE 'sql'
@@ -110,15 +110,15 @@ FROM (SELECT fl."followedId", fl."followerId",
 )list;
 $BODY$;
 
-ALTER FUNCTION public.list_abonnebyuser(numeric)
+ALTER FUNCTION list_abonnebyuser(numeric)
     OWNER TO postgres;
 
-COMMENT ON FUNCTION public.list_abonnebyuser(numeric)
+COMMENT ON FUNCTION list_abonnebyuser(numeric)
     IS 'Function pour retourner tout les abonnés d''un utilisateur';
 	
 --Liste des abonnements d'un utilisateur--
 
-CREATE OR REPLACE FUNCTION public.list_abonnementbyuser(
+CREATE OR REPLACE FUNCTION list_abonnementbyuser(
 	"PHONE_NUMBER" numeric)
     RETURNS json
     LANGUAGE 'sql'
@@ -135,15 +135,15 @@ FROM (SELECT fl."followerId", fl."followedId",
 )list;
 $BODY$;
 
-ALTER FUNCTION public.list_abonnementbyuser(numeric)
+ALTER FUNCTION list_abonnementbyuser(numeric)
     OWNER TO postgres;
 
-COMMENT ON FUNCTION public.list_abonnementbyuser(numeric)
+COMMENT ON FUNCTION list_abonnementbyuser(numeric)
     IS 'Function pour retourner tout les abonnements a un utilisateur';
 	
 --Liste de tout les categories--
 
-CREATE OR REPLACE FUNCTION public.list_allcategorie(
+CREATE OR REPLACE FUNCTION list_allcategorie(
 	)
     RETURNS json
     LANGUAGE 'sql'
@@ -156,15 +156,15 @@ FROM (SELECT info_categorie("categoryId")
 ;
 $BODY$;
 
-ALTER FUNCTION public.list_allcategorie()
+ALTER FUNCTION list_allcategorie()
     OWNER TO postgres;
 
-COMMENT ON FUNCTION public.list_allcategorie()
+COMMENT ON FUNCTION list_allcategorie()
     IS 'Selection de tout les categories';
 	
 --Liste de tout les favoris--
 
-CREATE OR REPLACE FUNCTION public.list_allfavorites(
+CREATE OR REPLACE FUNCTION list_allfavorites(
 	)
     RETURNS json
     LANGUAGE 'sql'
@@ -184,15 +184,15 @@ FROM (	SELECT ft."createdAt",
 )list;		
 $BODY$;
 
-ALTER FUNCTION public.list_allfavorites()
+ALTER FUNCTION list_allfavorites()
     OWNER TO postgres;
 
-COMMENT ON FUNCTION public.list_allfavorites()
+COMMENT ON FUNCTION list_allfavorites()
     IS 'Selection des informations de tout les favoris';
 	
 --Liste de tout les followers--
 
-CREATE OR REPLACE FUNCTION public.list_allfollowers(
+CREATE OR REPLACE FUNCTION list_allfollowers(
 	)
     RETURNS json
     LANGUAGE 'sql'
@@ -207,15 +207,15 @@ FROM (  SELECT info_user("followerId") AS "info_Follower",
 	 )list;		
 $BODY$;
 
-ALTER FUNCTION public.list_allfollowers()
+ALTER FUNCTION list_allfollowers()
     OWNER TO postgres;
 
-COMMENT ON FUNCTION public.list_allfollowers()
+COMMENT ON FUNCTION list_allfollowers()
     IS 'Function list all followers';
 	
 --Lilste de tout les publications--
 
-CREATE OR REPLACE FUNCTION public.list_allpublication(
+CREATE OR REPLACE FUNCTION list_allpublication(
 	)
     RETURNS json
     LANGUAGE 'sql'
@@ -229,15 +229,15 @@ FROM (
 )list;		
 $BODY$;
 
-ALTER FUNCTION public.list_allpublication()
+ALTER FUNCTION list_allpublication()
     OWNER TO postgres;
 
-COMMENT ON FUNCTION public.list_allpublication()
+COMMENT ON FUNCTION list_allpublication()
     IS 'Selection de toutes les publications';
 	
 --Liste de tout les stories--
 
-CREATE OR REPLACE FUNCTION public.list_allstories(
+CREATE OR REPLACE FUNCTION list_allstories(
 	)
     RETURNS json
     LANGUAGE 'sql'
@@ -245,21 +245,21 @@ CREATE OR REPLACE FUNCTION public.list_allstories(
     VOLATILE PARALLEL UNSAFE
 AS $BODY$
 SELECT json_agg(st)
-FROM public.stories st
-LEFT OUTER JOIN public.users us
+FROM stories st
+LEFT OUTER JOIN users us
 ON st."authorId" = us."phoneNumber"
 ;
 $BODY$;
 
-ALTER FUNCTION public.list_allstories()
+ALTER FUNCTION list_allstories()
     OWNER TO postgres;
 
-COMMENT ON FUNCTION public.list_allstories()
+COMMENT ON FUNCTION list_allstories()
     IS 'Selection de toute les stories';
 	
 --Liste des toutb les utilisateurs sauf l'utilisateur courant--
 
-CREATE OR REPLACE FUNCTION public.list_allusers_exceptuser(
+CREATE OR REPLACE FUNCTION list_allusers_exceptuser(
 	"PHONE_NUMBER" integer)
     RETURNS json
     LANGUAGE 'sql'
@@ -275,15 +275,15 @@ FROM (  SELECT info_user(us."phoneNumber") AS "info_user" FROM
 	 )list;		
 $BODY$;
 
-ALTER FUNCTION public.list_allusers_exceptuser(integer)
+ALTER FUNCTION list_allusers_exceptuser(integer)
     OWNER TO postgres;
 
-COMMENT ON FUNCTION public.list_allusers_exceptuser(integer)
+COMMENT ON FUNCTION list_allusers_exceptuser(integer)
     IS 'Function pour retourner tout les utilisateurs sauf l''utilisateur courant';
 	
 --Liste de tout les publications favorites du user--
 
-CREATE OR REPLACE FUNCTION public.list_favorites_byuser(
+CREATE OR REPLACE FUNCTION list_favorites_byuser(
 	"PHONE_NUMBER" numeric)
     RETURNS json
     LANGUAGE 'sql'
@@ -303,15 +303,15 @@ FROM (  SELECT ft."userId",ft."createdAt",
 		ORDER BY pb."publicationId")list;		
 $BODY$;
 
-ALTER FUNCTION public.list_favorites_byuser(numeric)
+ALTER FUNCTION list_favorites_byuser(numeric)
     OWNER TO postgres;
 
-COMMENT ON FUNCTION public.list_favorites_byuser(numeric)
+COMMENT ON FUNCTION list_favorites_byuser(numeric)
     IS 'Selection les informations completes des favories en fonction d''un user';
 	
 --Liste de tout les menu par categories--
 
-CREATE OR REPLACE FUNCTION public.list_menu_bycategories(
+CREATE OR REPLACE FUNCTION list_menu_bycategories(
 	"CATEGORY_ID" integer)
     RETURNS json
     LANGUAGE 'sql'
@@ -329,15 +329,15 @@ FROM (  SELECT mn."menuId",
 		ORDER BY mn."menuId")list;		
 $BODY$;
 
-ALTER FUNCTION public.list_menu_bycategories(integer)
+ALTER FUNCTION list_menu_bycategories(integer)
     OWNER TO postgres;
 
-COMMENT ON FUNCTION public.list_menu_bycategories(integer)
+COMMENT ON FUNCTION list_menu_bycategories(integer)
     IS 'Selection de tout menus d''une categories';
 	
 --Liste de tout les notifications par utilisateur--
 
-CREATE OR REPLACE FUNCTION public.list_notification_byuser(
+CREATE OR REPLACE FUNCTION list_notification_byuser(
 	"PHONE_NUMBER" numeric)
     RETURNS json
     LANGUAGE 'sql'
@@ -345,21 +345,21 @@ CREATE OR REPLACE FUNCTION public.list_notification_byuser(
     VOLATILE PARALLEL UNSAFE
 AS $BODY$
 SELECT json_agg(nf)
-FROM public.notifications nf
-LEFT OUTER JOIN public.users us
+FROM notifications nf
+LEFT OUTER JOIN users us
 ON nf."authorId" = us."phoneNumber"
 WHERE nf.receiverid = "PHONE_NUMBER"
 $BODY$;
 
-ALTER FUNCTION public.list_notification_byuser(numeric)
+ALTER FUNCTION list_notification_byuser(numeric)
     OWNER TO postgres;
 
-COMMENT ON FUNCTION public.list_notification_byuser(numeric)
+COMMENT ON FUNCTION list_notification_byuser(numeric)
     IS 'Selection de tout les notifications d''un utiliseur';
 	
 --Id de tout les publications liké
 
-CREATE OR REPLACE FUNCTION public.list_publication_liked(
+CREATE OR REPLACE FUNCTION list_publication_liked(
 	"ID" integer)
     RETURNS json
     LANGUAGE 'sql'
@@ -373,15 +373,15 @@ AS $BODY$
 	WHERE L."publicationId"="ID";
 $BODY$;
 
-ALTER FUNCTION public.list_publication_liked(integer)
+ALTER FUNCTION list_publication_liked(integer)
     OWNER TO postgres;
 
-COMMENT ON FUNCTION public.list_publication_liked(integer)
+COMMENT ON FUNCTION list_publication_liked(integer)
     IS 'Selection des publications liké';
 	
 --Liste de tout  les publications d'un user( tout les informations concernant)
 
-CREATE OR REPLACE FUNCTION public.list_publications_byuser(
+CREATE OR REPLACE FUNCTION list_publications_byuser(
 	"PHONE_NUMBER" numeric)
     RETURNS json
     LANGUAGE 'sql'
@@ -400,8 +400,8 @@ FROM (SELECT l."publicationId",
 		ORDER BY l."publicationId")list;		
 $BODY$;
 
-ALTER FUNCTION public.list_publications_byuser(numeric)
+ALTER FUNCTION list_publications_byuser(numeric)
     OWNER TO postgres;
 
-COMMENT ON FUNCTION public.list_publications_byuser(numeric)
+COMMENT ON FUNCTION list_publications_byuser(numeric)
     IS 'Selection des informations completes des categories d''un menu';
