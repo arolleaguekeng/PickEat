@@ -10,7 +10,7 @@
     android:layout_marginTop="10dp"
     app:cardCornerRadius="15dp"
     android:layout_marginBottom="10dp">
-    
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,9 +18,10 @@
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/imagefav"
-            android:layout_width="391dp"
-            android:layout_height="188dp"
-            android:src="@drawable/category_5"
+            android:layout_width="439dp"
+            android:layout_height="159dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/splash"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -28,12 +29,12 @@
         <ImageButton
 
             android:id="@+id/favorisadd"
-            android:layout_width="65dp"
-            android:layout_height="72dp"
-            android:layout_marginTop="152dp"
+            android:layout_width="58dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="120dp"
             android:background="@drawable/circefav"
             app:layout_constraintEnd_toEndOf="@+id/imagefav"
-            app:layout_constraintHorizontal_bias="0.932"
+            app:layout_constraintHorizontal_bias="0.924"
             app:layout_constraintStart_toStartOf="@+id/imagefav"
             app:layout_constraintTop_toTopOf="@+id/imagefav"
             app:srcCompat="@drawable/bookmark_favoris" />
@@ -43,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:text="Name menu"
             android:textColor="@color/black"
             android:textSize="24sp"
@@ -62,6 +63,36 @@
             android:inputType="textMultiLine"
             app:layout_constraintStart_toStartOf="@+id/namemeal"
             app:layout_constraintTop_toBottomOf="@+id/namemeal" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:backgroundTint="@color/light_blue_A400"
+            android:text="Open"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="8sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <Button
+            android:layout_width="69dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="28dp"
+            android:backgroundTint="@color/light_blue_A400"
+            android:text="PickEat"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@+id/namemeal"
+            app:layout_constraintStart_toEndOf="@+id/namemeal"
+            app:layout_constraintTop_toTopOf="@+id/namemeal"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
