@@ -7,6 +7,7 @@
         <entry key="..\:/projet/PickEat/app/src/main/res/drawable-v24/cercle.xml" value="0.137" />
         <entry key="..\:/projet/PickEat/app/src/main/res/drawable-v24/gradient_background.xml" value="0.137" />
         <entry key="..\:/projet/PickEat/app/src/main/res/drawable-v24/gradient_background2.xml" value="0.137" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/drawable-v24/ic_android_black_24dp.xml" value="0.2135" />
         <entry key="..\:/projet/PickEat/app/src/main/res/drawable-v24/ic_baseline_add_24.xml" value="0.137" />
         <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_add_publication.xml" value="0.1265625" />
         <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_authentification_code.xml" value="0.1265625" />
@@ -15,7 +16,9 @@
         <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_filter.xml" value="0.1265625" />
         <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_login.xml" value="0.1265625" />
         <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_main.xml" value="0.22418478260869565" />
-        <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_send_notif.xml" value="0.1265625" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_message.xml" value="0.2610734757686295" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_notification.xml" value="0.2609375" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_send_notif.xml" value="0.4" />
         <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_splash.xml" value="0.1265625" />
         <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_stories.xml" value="0.15729166666666666" />
         <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_welcome.xml" value="0.1265625" />
@@ -31,8 +34,10 @@
         <entry key="..\:/projet/PickEat/app/src/main/res/layout/fragment_notifications.xml" value="0.275" />
         <entry key="..\:/projet/PickEat/app/src/main/res/layout/fragment_profile.xml" value="0.1265625" />
         <entry key="..\:/projet/PickEat/app/src/main/res/layout/fragment_publication.xml" value="0.136" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/left_item_layout.xml" value="0.15989583333333332" />
         <entry key="..\:/projet/PickEat/app/src/main/res/layout/menu_card.xml" value="0.1265625" />
         <entry key="..\:/projet/PickEat/app/src/main/res/layout/publication_item.xml" value="0.1265625" />
+        <entry key="..\:/projet/PickEat/app/src/main/res/layout/right_item_layout.xml" value="0.15989583333333332" />
         <entry key="..\:/projet/PickEat/app/src/main/res/menu/bottom_nav_menu.xml" value="0.4" />
         <entry key="..\:/projet/PickEat/app/src/main/res/menu/menu_photo.xml" value="0.275" />
         <entry key="..\:/projet/PickEat/app/src/main/res/xml/root_preferences.xml" value="0.1265625" />

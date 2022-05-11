@@ -20,4 +20,5 @@ class MyFirebaseIdService:FirebaseMessagingService(){
         var token: Token = Token(refreshToken)
         FirebaseDatabase.getInstance().getReference("Tokens").child(FirebaseAuth.getInstance().getCurrentUser()!!.getUid()).setValue(token)
     }
+
 }

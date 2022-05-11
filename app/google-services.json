@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "596132813142",
-    "project_id": "pickeat-f9080",
-    "storage_bucket": "pickeat-f9080.appspot.com"
+    "project_number": "392512583376",
+    "firebase_url": "https://pickeatdb-default-rtdb.firebaseio.com",
+    "project_id": "pickeatdb",
+    "storage_bucket": "pickeatdb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:596132813142:android:76baa238cbc4974e015ef7",
+        "mobilesdk_app_id": "1:392512583376:android:9f24e38e54ff94a49e50d5",
         "android_client_info": {
           "package_name": "cm.pam.pickeat"
         }
       },
       "oauth_client": [
         {
-          "client_id": "596132813142-3f8a7tdfpojoejturek5cpp2f1f1ike1.apps.googleusercontent.com",
+          "client_id": "392512583376-i9acvhon2k1mqgcfe9g64d1u8e72u5be.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAUH2tHvYoiQ3mGPCt-x_5i0toQkXC4U2M"
+          "current_key": "AIzaSyD05qEIe_qQhkjuPs8VCs-ayVR8A4lzE94"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "596132813142-3f8a7tdfpojoejturek5cpp2f1f1ike1.apps.googleusercontent.com",
+              "client_id": "392512583376-i9acvhon2k1mqgcfe9g64d1u8e72u5be.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -11,6 +11,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import cm.pam.pickeat.controller.auth
 import cm.pam.pickeat.controller.currentPhone
+import cm.pam.pickeat.controller.notification.MessageActivity
 import cm.pam.pickeat.controller.readOnFile
 import cm.pam.pickeat.databinding.ActivityMainBinding
 import cm.pam.pickeat.ui.favori.FavoryFragment
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         else{
 //            title=resources.getString(R.string.title_home)
 //            loadFragment(HomeFragment())
-            startActivity(Intent(applicationContext, SendNotif::class.java))
+            startActivity(Intent(applicationContext, MessageActivity::class.java))
             finish()
         }
 
