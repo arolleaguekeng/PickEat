@@ -14,9 +14,8 @@ import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat.startActivityForResult
-import cm.pam.pickeat.model.AddressModel
-import cm.pam.pickeat.model.UserModel
-import cm.pam.pickeat.repository.UserRepository
+import cm.pam.pickeat.model.Address
+import cm.pam.pickeat.repository.RestUser
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.io.ByteArrayOutputStream
 import java.lang.Exception
@@ -26,7 +25,7 @@ import java.text.SimpleDateFormat
 
 val REQUEST_CODE_CAMERA = 200
 val REQUEST_CODE_GALLERY = 100
-var currentUser: UserRepository? = UserRepository(666, SimpleDateFormat("dd-MM-yyyy").parse("26-06-2002"),"Pharaon",null, AddressModel("baf","sadi"),R.drawable.bookmark_favoris)
+var currentUser: RestUser? = RestUser(666, SimpleDateFormat("dd-MM-yyyy").parse("26-06-2002"),"Pharaon",null, Address("baf","sadi"),R.drawable.bookmark_favoris)
 
 @RequiresApi(Build.VERSION_CODES.Q)
 @SuppressLint("RestrictedApi")

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import cm.pam.pickeat.R
 import cm.pam.pickeat.Service.adapters.CategoryAdapter
 import cm.pam.pickeat.databinding.FragmentCategoryBinding
-import cm.pam.pickeat.model.CategoryModel
+import cm.pam.pickeat.model.Category
 import cm.pam.pickeat.ui.home.HomeFragment
 import cm.pam.pickeat.ui.menu_search.MenuSearchFragment
 
@@ -33,15 +33,15 @@ class CategoryFragment : Fragment() {
 
     }
 
-    private var categories = arrayListOf<CategoryModel>(
-        CategoryModel("Cameroonian", R.drawable.category_1),
-        CategoryModel("Traditional Cameroonian", R.drawable.category_2),
-        CategoryModel("Fast-Fod", R.drawable.category_3),
-        CategoryModel("Asiatic Meal", R.drawable.category_4),
-        CategoryModel("European Meal", R.drawable.category_5),
-        CategoryModel("English Meal", R.drawable.category_6),
-        CategoryModel("Drink", R.drawable.category_7),
-        CategoryModel("Cake", R.drawable.category_8)
+    private var categories = arrayListOf<Category>(
+        Category("Cameroonian", R.drawable.category_1),
+        Category("Traditional Cameroonian", R.drawable.category_2),
+        Category("Fast-Fod", R.drawable.category_3),
+        Category("Asiatic Meal", R.drawable.category_4),
+        Category("European Meal", R.drawable.category_5),
+        Category("English Meal", R.drawable.category_6),
+        Category("Drink", R.drawable.category_7),
+        Category("Cake", R.drawable.category_8)
     )
     lateinit var binding: FragmentCategoryBinding
     override fun onCreateView(

@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import cm.pam.pickeat.R
-import cm.pam.pickeat.model.UserModel
+import cm.pam.pickeat.model.User
 import de.hdodenhof.circleimageview.CircleImageView
 
 
-class UserAdapter(private val users: ArrayList<UserModel>): RecyclerView.Adapter<UserAdapter.ViewHolder>() {
+class UserAdapter(private val users: ArrayList<User>): RecyclerView.Adapter<UserAdapter.ViewHolder>() {
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         lateinit var photo: CircleImageView
@@ -27,8 +27,8 @@ class UserAdapter(private val users: ArrayList<UserModel>): RecyclerView.Adapter
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.photo.setImageResource(users[position].photo)
-        holder.name.text = users[position].name
+        /*holder.photo.setImageResource(users[position].photo)
+        holder.name.text = users[position].name*/
     }
 
     override fun getItemCount(): Int {

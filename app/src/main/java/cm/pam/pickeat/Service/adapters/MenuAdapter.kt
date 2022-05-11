@@ -1,5 +1,6 @@
 package cm.pam.pickeat.Service.adapters
 
+import Publication
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,11 +10,10 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import cm.pam.pickeat.R
-import cm.pam.pickeat.model.MenuModel
-import cm.pam.pickeat.model.PublicationModel
+import cm.pam.pickeat.model.Menu
 
 
-class MenuAdapter(private val menuList: ArrayList<MenuModel>):
+class MenuAdapter(private val menuList: ArrayList<Menu>):
     RecyclerView.Adapter<MenuAdapter.MyViewHolder>()  {
 
     class MyViewHolder(viewItem: View): RecyclerView.ViewHolder(viewItem) {
@@ -42,7 +42,7 @@ class MenuAdapter(private val menuList: ArrayList<MenuModel>):
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.title.text = menuList[position].title
+        /*holder.title.text = menuList[position].title
         holder.description.text = menuList[position].description
         holder.category.text = menuList[position].category
         holder.region.text = menuList[position].region
@@ -66,13 +66,13 @@ class MenuAdapter(private val menuList: ArrayList<MenuModel>):
                 }
                 holder.reminder.isVisible = false
             }
-        }
+        }*/
     }
 
     override fun getItemCount(): Int {
         return menuList.size
     }
-    private fun rateAverage(publicationModels: ArrayList<PublicationModel>?): Double{
+    private fun rateAverage(publicationModels: ArrayList<Publication>?): Double{
         println("------------->Hello!")
         var average: Double = 0.0
        if(!publicationModels.isNullOrEmpty()){
@@ -82,10 +82,5 @@ class MenuAdapter(private val menuList: ArrayList<MenuModel>):
            return average/publicationModels.size
        }
         return 0.0
-    }
-
-    private fun bindAuthor(users: ArrayList<ImageView>, publicationModels: ArrayList<PublicationModel>?, view: TextView):Unit{
-
-
     }
 }

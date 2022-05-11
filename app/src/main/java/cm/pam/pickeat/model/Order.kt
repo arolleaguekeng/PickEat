@@ -4,8 +4,8 @@ import android.os.Parcel
 import android.os.Parcelable
 import java.util.*
 
-data class OrderModel(val orderId: Int, val authorId: Long, val receiverId: Long,
-                      val publicationId: Int, val status: Boolean, var orderDate: Date, val quantity: Int):Parcelable{
+data class Order(val orderId: Int, val authorId: Long, val receiverId: Long,
+                 val publicationId: Int, val status: Boolean, var orderDate: Date, val quantity: Int):Parcelable{
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readLong(),
@@ -30,12 +30,12 @@ data class OrderModel(val orderId: Int, val authorId: Long, val receiverId: Long
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<OrderModel> {
-        override fun createFromParcel(parcel: Parcel): OrderModel {
-            return OrderModel(parcel)
+    companion object CREATOR : Parcelable.Creator<Order> {
+        override fun createFromParcel(parcel: Parcel): Order {
+            return Order(parcel)
         }
 
-        override fun newArray(size: Int): Array<OrderModel?> {
+        override fun newArray(size: Int): Array<Order?> {
             return arrayOfNulls(size)
         }
     }

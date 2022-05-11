@@ -1,4 +1,4 @@
-package cm.pam.pickeat.controller
+package cm.pam.pickeat.repository
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.ContentResolver

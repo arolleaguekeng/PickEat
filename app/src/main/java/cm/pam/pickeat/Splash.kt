@@ -7,7 +7,7 @@ import android.os.Handler
 import android.view.WindowManager
 import cm.pam.pickeat.AuthentificationPhone
 import cm.pam.pickeat.R
-import cm.pam.pickeat.controller.TIME_OUT
+import cm.pam.pickeat.repository.TIME_OUT
 
 class Splash : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +28,6 @@ class Splash : AppCompatActivity() {
             val intent = Intent(applicationContext,AuthentificationPhone::class.java)
             startActivity(intent)
             finish()
-        },TIME_OUT)
+        }, TIME_OUT)
     }
 }

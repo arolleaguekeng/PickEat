@@ -3,8 +3,8 @@ package cm.pam.pickeat.model
 import android.os.Parcel
 import android.os.Parcelable
 
-data class NotificationModel(val authorId: Long, val receiverId: Long,
-val title: String,val notificationId: Int, val message: String):Parcelable {
+data class Notification(val authorId: Long, val receiverId: Long,
+                        val title: String, val notificationId: Int, val message: String):Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readLong(),
         parcel.readLong(),
@@ -26,12 +26,12 @@ val title: String,val notificationId: Int, val message: String):Parcelable {
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<NotificationModel> {
-        override fun createFromParcel(parcel: Parcel): NotificationModel {
-            return NotificationModel(parcel)
+    companion object CREATOR : Parcelable.Creator<Notification> {
+        override fun createFromParcel(parcel: Parcel): Notification {
+            return Notification(parcel)
         }
 
-        override fun newArray(size: Int): Array<NotificationModel?> {
+        override fun newArray(size: Int): Array<Notification?> {
             return arrayOfNulls(size)
         }
     }

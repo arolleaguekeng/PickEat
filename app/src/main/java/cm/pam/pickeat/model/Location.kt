@@ -3,7 +3,7 @@ package cm.pam.pickeat.model
 import android.os.Parcel
 import android.os.Parcelable
 
-data class LocationModel(val locationId: Int, val city: String, val quater: String): Parcelable {
+data class Location(val locationId: Int, val city: String, val quater: String): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString()!!,
@@ -21,12 +21,12 @@ data class LocationModel(val locationId: Int, val city: String, val quater: Stri
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<LocationModel> {
-        override fun createFromParcel(parcel: Parcel): LocationModel {
-            return LocationModel(parcel)
+    companion object CREATOR : Parcelable.Creator<Location> {
+        override fun createFromParcel(parcel: Parcel): Location {
+            return Location(parcel)
         }
 
-        override fun newArray(size: Int): Array<LocationModel?> {
+        override fun newArray(size: Int): Array<Location?> {
             return arrayOfNulls(size)
         }
     }

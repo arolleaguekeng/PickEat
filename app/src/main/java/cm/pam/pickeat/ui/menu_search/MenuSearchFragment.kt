@@ -1,5 +1,6 @@
 package cm.pam.pickeat.ui.menu_search
 
+import Publication
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -17,25 +18,12 @@ import androidx.recyclerview.widget.RecyclerView
 import cm.pam.pickeat.R
 import cm.pam.pickeat.Service.adapters.MenuAdapter
 import cm.pam.pickeat.databinding.FragmentMenuSearchBinding
-import cm.pam.pickeat.model.MealModel
-import cm.pam.pickeat.model.MenuModel
-import cm.pam.pickeat.model.PublicationModel
+import cm.pam.pickeat.model.Meal
+import cm.pam.pickeat.model.Menu
 import cm.pam.pickeat.ui.home.HomeFragment
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
-
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [Menu2.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MenuSearchFragment : Fragment() {
 
     lateinit var chipGroup: ChipGroup
@@ -45,21 +33,9 @@ class MenuSearchFragment : Fragment() {
     lateinit var adapter: MenuAdapter
     lateinit var binding: FragmentMenuSearchBinding
     var filterOptions = ArrayList<String>()
-    var publications = arrayListOf<PublicationModel>(
-        PublicationModel(MealModel("Traditional", "Eru", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tristique tellus a nibh pretium, in egestas quam ornare. Nullam ante lorem, fermentum non imperdiet ac, feugiat sollicitudin leo. Quisque elementum luctus erat, ac faucibus nisi finibus eget. Curabitur a interdum neque. Nam bibendum euismod nisl vel volutpat. Duis non nibh ut arcu congue congue ultricies eu nulla. Aenean dignissim enim eu sapien ullamcorper pharetra.", R.drawable.menu1), "Delicious Eru with Garry", R.drawable.menu1, 0.0, 2500.0),
-        PublicationModel(MealModel("Traditional", "Eru", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tristique tellus a nibh pretium, in egestas quam ornare. Nullam ante lorem, fermentum non imperdiet ac, feugiat sollicitudin leo. Quisque elementum luctus erat, ac faucibus nisi finibus eget. Curabitur a interdum neque. Nam bibendum euismod nisl vel volutpat. Duis non nibh ut arcu congue congue ultricies eu nulla. Aenean dignissim enim eu sapien ullamcorper pharetra.", R.drawable.menu1), "Delicious Eru with Garry", R.drawable.menu1, 0.0, 2500.0),
-        PublicationModel(MealModel("Traditional", "Eru", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tristique tellus a nibh pretium, in egestas quam ornare. Nullam ante lorem, fermentum non imperdiet ac, feugiat sollicitudin leo. Quisque elementum luctus erat, ac faucibus nisi finibus eget. Curabitur a interdum neque. Nam bibendum euismod nisl vel volutpat. Duis non nibh ut arcu congue congue ultricies eu nulla. Aenean dignissim enim eu sapien ullamcorper pharetra.", R.drawable.menu1), "Delicious Eru with Garry", R.drawable.menu1, 5.0, 2500.0)
-    )
-    var menus = arrayListOf<MenuModel>(
-        MenuModel("ERU", "Traditionnal", "West", "Delicieux plat de eru tres armees aucune resistance ",
-            R.drawable.category1, publications)
-        , MenuModel("KOKI", "Traditionnal", "West", "le KOKI est bon quand ca chaufe",
-            R.drawable.bro, publications)
-        , MenuModel("Pommes", "Traditionnal", "Littoral", "la douceur des pommes du littoral dans un bouillions de viande sauté", R.drawable.pomme, publications)
-        , MenuModel("Taro", "test", "test", "test", R.drawable.taro, publications)
-        , MenuModel("Riz", "test", "test", "test", R.drawable.riz, publications)
-    )
-    var selectedMenu: List<MenuModel>? = null
+    var publications = arrayListOf<Publication>()
+    var menus = arrayListOf<Menu>()
+    var selectedMenu: List<Menu>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -97,10 +73,10 @@ class MenuSearchFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                selectedMenu = menus.filter { it.title.toLowerCase().contains(newText!!.toLowerCase()) }
+                selectedMenu = menus.filter { it.menuName.toLowerCase().contains(newText!!.toLowerCase()) }
                 if(!selectedMenu.isNullOrEmpty())
                 {
-                    adapter = MenuAdapter(selectedMenu!! as ArrayList<MenuModel>)
+                    adapter = MenuAdapter(selectedMenu!! as ArrayList<Menu>)
                     recycleView.adapter = adapter
                     recycleView.refreshDrawableState()
                 }

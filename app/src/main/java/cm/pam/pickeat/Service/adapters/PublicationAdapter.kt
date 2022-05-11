@@ -1,5 +1,6 @@
 package cm.pam.pickeat.Service.adapters
 
+import Publication
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,10 +8,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import cm.pam.pickeat.R
-import cm.pam.pickeat.model.PublicationModel
 
 
-class PublicationAdapter(private val publicationModels : ArrayList<PublicationModel>) : RecyclerView.Adapter<PublicationAdapter.MyViewHolder>() {
+class PublicationAdapter(private val publications : ArrayList<Publication>) : RecyclerView.Adapter<PublicationAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent : ViewGroup, viewType : Int) : MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.publication_item, parent, false)
@@ -18,15 +18,15 @@ class PublicationAdapter(private val publicationModels : ArrayList<PublicationMo
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.category.text = publicationModels[position].mealModel.categoryName
-        holder.meal.text = publicationModels[position].mealModel.name
-        holder.price.text = publicationModels[position].price.toString()
-        holder.description.text = publicationModels[position].description
-        holder.photo.setImageResource(publicationModels[position].image)
+        holder.category.text = publications[position].mealModel.categoryName
+        holder.meal.text = publications[position].mealModel.name
+        holder.price.text = publications[position].price.toString()
+        holder.description.text = publications[position].description
+        holder.photo.setImageResource(publications[position].image)
     }
 
     override fun getItemCount (): Int {
-        return publicationModels.size
+        return publications.size
     }
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

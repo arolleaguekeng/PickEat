@@ -6,11 +6,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import cm.pam.pickeat.R
-import cm.pam.pickeat.model.CategoryModel
+import cm.pam.pickeat.model.Category
 
 
 
-class CategoryAdapter2(private val categoryModels : ArrayList<CategoryModel>, private val onCategoryClicked:(position: Int)->Unit) : RecyclerView.Adapter<CategoryAdapter2.MyViewHolder>() {
+class CategoryAdapter2(private val categoryModels : ArrayList<Category>, private val onCategoryClicked:(position: Int)->Unit) : RecyclerView.Adapter<CategoryAdapter2.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent : ViewGroup, viewType : Int) : MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.category_small_itmes, parent, false)
