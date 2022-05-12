@@ -9,7 +9,6 @@ import cm.pam.pickeat.repository.currentPhone
 import cm.pam.pickeat.repository.readOnFile
 import cm.pam.pickeat.databinding.ActivityMainBinding
 import cm.pam.pickeat.ui.favori.FavoryFragment
-import cm.pam.pickeat.ui.friend.list.FriendListFragment
 import cm.pam.pickeat.ui.home.HomeFragment
 import cm.pam.pickeat.ui.notifications.NotificationsFragment
 import cm.pam.pickeat.ui.profile.ProfileFragment
@@ -33,22 +32,20 @@ class MainActivity : AppCompatActivity() {
         currentPhone = readOnFile(this, file)
 
         /*if (currentUer == null) {
-            startActivity(Intent(applicationContext, AuthentificationPhone::class.java))
+            startActivity(Intent(applicationContext, MainActivity::class.java))
             finish()
-        }*/
-        //else{
-         title=resources.getString(R.string.title_home)
+        }
+        else{*/
+//            title=resources.getString(R.string.title_home)
+          loadFragment(HomeFragment())
 
-            //startActivity(Intent(applicationContext, MainActivity::class.java))
-            loadFragment(HomeFragment())
-            //finish()
-// }
+       /* }*/
 
         binding.bottomNav.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.navigation_favorite-> {
                     title=resources.getString(R.string.title_favourites)
-                    loadFragment(FriendListFragment())
+                    loadFragment(FavoryFragment())
                     return@setOnNavigationItemSelectedListener true
                 }
 
@@ -66,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_notification-> {
                     title=resources.getString(R.string.title_notification)
                     loadFragment(NotificationsFragment())
-                   return@setOnNavigationItemSelectedListener true
+                    return@setOnNavigationItemSelectedListener true
                 }
                 R.id.navigation_account-> {
                     title=resources.getString(R.string.title_account)
