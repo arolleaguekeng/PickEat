@@ -51,7 +51,7 @@ class SendNotif : AppCompatActivity() {
         var firebaseUser: FirebaseUser? = FirebaseAuth.getInstance().currentUser
         var refreshToken:String= FirebaseInstallations.getInstance().toString()
         var token: Token = Token(refreshToken)
-        FirebaseDatabase.getInstance().getReference("Tokens").child(FirebaseAuth.getInstance().getCurrentUser()!!.getUid()).setValue(token)
+//        FirebaseDatabase.getInstance().getReference("Tokens").child(FirebaseAuth.getInstance().getCurrentUser()!!.getUid()).setValue(token)
     }
     private fun sendNotification(usertoken:String,title: String,message: String){
         var data= Data(title,message)

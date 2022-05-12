@@ -14,6 +14,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import cm.pam.pickeat.FollowActivity
 import cm.pam.pickeat.R
 import cm.pam.pickeat.Service.adapters.PublicationAdapter
 import cm.pam.pickeat.databinding.FragmentProfileBinding
@@ -58,6 +59,18 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentProfileBinding.inflate(inflater, container, false)
 
+
+        binding.followers.setOnClickListener{
+            Intent(it.context, FollowActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
+        binding.abonnement.setOnClickListener {
+            Intent(it.context, FollowActivity::class.java).also {
+                startActivity(it)
+            }
+        }
 
         val recycleView = binding.publicationList
         var mLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
