@@ -3,6 +3,7 @@ package cm.pam.pickeat.ui.friend.list
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.FileUtils
 import android.provider.ContactsContract
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -21,6 +22,7 @@ import cm.pam.pickeat.currentUser
 import cm.pam.pickeat.model.Follower
 import cm.pam.pickeat.model.User
 import cm.pam.pickeat.repository.ItemClickListener
+import cm.pam.pickeat.ui.ProfileFriend
 import java.time.Instant
 import java.util.*
 
@@ -48,6 +50,11 @@ class FriendListFragment : Fragment(), ItemClickListener {
             Follower(300599, 890088, Date.from(Instant.now()))
         )
 
+        var UserList = mutableListOf(User(68943085, "toroto", R.drawable.harden, 400.05, 1),
+            User(45568494, "ALEXIS", R.drawable.b3, 400.05, 1),
+            User(890088, "asta", R.drawable.asta, 500.0, 1)
+        )
+        var CurrentFollow: User? = null
         var CurrentUser = User(300599, "Morgan", R.drawable.asta, 500.0, 1)
     }
 
@@ -57,10 +64,7 @@ class FriendListFragment : Fragment(), ItemClickListener {
 
 
 
-    var UserList = mutableListOf(User(68943085, "toroto", R.drawable.harden, 400.05, 1),
-                                User(45568494, "ALEXIS", R.drawable.b3, 400.05, 1),
-                                User(890088, "asta", R.drawable.asta, 500.0, 1)
-                                )
+
 
 
     override fun onCreateView(
@@ -72,11 +76,27 @@ class FriendListFragment : Fragment(), ItemClickListener {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_friend_list, container, false)
 
+        var swiper : androidx.swiperefreshlayout.widget.SwipeRefreshLayout = view.findViewById(R.id.SwipeRefresh)
+
+        swiper.setOnRefreshListener(){
+            swiper.isRefreshing = false
+
+            var list = mutableListOf<User>()
+            for(i in 0 until UserList.size)
+            {
+                list.add(UserList[i])
+            }
+
+
+            followAdapter.reload(list)
+
+        }
+
 
 
         recyclerViewFollow = view.findViewById(R.id.RecycleViewFollowers)
 
-        followAdapter = FollowAdapter(UserList, this)
+        followAdapter = FollowAdapter(UserList,  this)
 
         recyclerViewFollow.apply {
             layoutManager = LinearLayoutManager(view.context)
@@ -91,38 +111,56 @@ class FriendListFragment : Fragment(), ItemClickListener {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onButtonClicked(user: User) {
         Log.e("Data", user.toString())
-
-        var j : Int = 0
-
-        var position: Int = 0
+        var position: Int= 0
 
 
 
-        while (j<FollowList.lastIndex){
-            if(user.phoneNumber == FollowList[j].followedId && CurrentUser.phoneNumber == FollowList[j].followerId){
-                follow = true;
-                position = j
+        if (follow)
+        {
+
+            for(i in 0..FollowList.lastIndex){
+
+                if(user.phoneNumber == FollowList[i].followedId && CurrentUser.phoneNumber == FriendListFragment.FollowList[i].followerId) {
+                    position = i
+                    follow = true
+                    break
+                }
+
             }
-            j++
-        }
-        if (follow) {
-            follow = false
+            FollowList?.add(Follower(CurrentUser.phoneNumber, user.phoneNumber, Date.from(Instant.now())))
             FollowList?.removeAt(position)
             //user.notifications?.add(Notification(CurrentUser.image, "Hello ${user.fullname} user ${CurrentUser.fullname} follow you", "2PM"))
-        } else {
-            follow = true
-            FollowList?.add(Follower(CurrentUser.phoneNumber, user.phoneNumber, Date.from(Instant.now())))
+        }
+        else
+        {
+            for(i in 0..FollowList.lastIndex){
+
+                if(user.phoneNumber == FollowList[i].followedId && CurrentUser.phoneNumber == FriendListFragment.FollowList[i].followerId) {
+                    position = i
+                    follow = false
+                    break
+                }
+
+            }
+
+            FollowList?.removeAt(position)
         }
 
     }
 
 
-    override fun onItemClicked(user: User, view: View) {
-        Toast.makeText(view.context, "echo", Toast.LENGTH_SHORT).show()
-        //CurrentFollow = user
-        //var intent = Intent(view.context, MainActivity::class.java)
-        //startActivity(intent)
+    override fun onItemClicked(user: User, view: View)
+    {
+        //Toast.makeText(view.context, "echo", Toast.LENGTH_SHORT).show()
+        CurrentFollow = user
+        var intent = Intent(view.context, ProfileFriend::class.java)
+        startActivity(intent)
+
     }
+
+
+
+
 
 
 

@@ -14,12 +14,19 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.viewpager.widget.ViewPager
 import cm.pam.pickeat.FollowActivity
 import cm.pam.pickeat.R
 import cm.pam.pickeat.Service.adapters.PublicationAdapter
+import cm.pam.pickeat.Service.adapters.UserAdapter
+import cm.pam.pickeat.Service.adapters.ViewPageAdapter
 import cm.pam.pickeat.databinding.FragmentProfileBinding
 import cm.pam.pickeat.repository.*
+import cm.pam.pickeat.ui.home.HomeFragment
+import cm.pam.pickeat.ui.orders.FragmentCurrentOrders
+import cm.pam.pickeat.ui.orders.FragmentOrders
 import cm.pam.pickeat.ui.sarterApp.Authentification.AuthentificationPhone
+import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
 import java.io.File
 
@@ -66,23 +73,57 @@ class ProfileFragment : Fragment() {
             }
         }
 
+        binding.textView10.setOnClickListener{
+            Intent(it.context, FollowActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
+        binding.textView9.setOnClickListener{
+            Intent(it.context, FollowActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
         binding.abonnement.setOnClickListener {
             Intent(it.context, FollowActivity::class.java).also {
                 startActivity(it)
             }
         }
 
-        val recycleView = binding.publicationList
+
+
+
+
+
+        /*val recycleView = binding.publicationList
         var mLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         recycleView!!.layoutManager = mLayoutManager
         val mAdapter = PublicationAdapter(publications)
         recycleView!!.adapter = mAdapter
         println(mAdapter.itemCount)
-        binding.phonenumber.text = currentPhone
+        binding.phonenumber.text = currentPhone*/
 
         val toAppBarr = binding.topAppBar
         toAppBarr.setOnMenuItemClickListener{menuItemListener(it)}
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        var mviewPage: ViewPager = view.findViewById(R.id.viewPager) as ViewPager
+
+        val fragmentAdapter = ViewPageAdapter(childFragmentManager)
+        fragmentAdapter.addFragment(FragmentOrders(),"Homes")
+        fragmentAdapter.addFragment(FragmentCurrentOrders(),"Chat")
+
+
+
+
+
+        mviewPage.adapter = fragmentAdapter
+        binding.tabLayout.setupWithViewPager(mviewPage)
+
     }
 
     @SuppressLint("RestrictedApi")

@@ -1,29 +1,54 @@
 package cm.pam.pickeat
 
+import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
+import cm.pam.pickeat.Service.adapters.ViewPageAdapter
+import cm.pam.pickeat.model.Follower
+import cm.pam.pickeat.model.User
+import cm.pam.pickeat.repository.ItemClickListener
 import cm.pam.pickeat.ui.friend.following.FollowingListFragment
 import cm.pam.pickeat.ui.friend.list.FriendListFragment
 import cm.pam.pickeat.ui.home.HomeViewModel
 import cm.pam.pickeat.ui.profile.ProfileFragment
 import com.google.android.material.tabs.TabLayout
+import java.time.Instant
+import java.util.*
 
 class FollowActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_follow)
 
+
+
         var toolBar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.topAppBar)
+        var viewPager = findViewById(R.id.viewPager) as ViewPager
+        var tablayout = findViewById<TabLayout>(R.id.tabLayout)
+        val fragmentAdapter = ViewPageAdapter(supportFragmentManager)
+
+        fragmentAdapter.addFragment(FriendListFragment(),"Home")
+        fragmentAdapter.addFragment(FollowingListFragment(),"Following")
+
+        viewPager.adapter = fragmentAdapter
+        tablayout.setupWithViewPager(viewPager)
+
+
+
+
 
         toolBar.title = FriendListFragment.CurrentUser.name
 
-        var tablayout = findViewById<com.google.android.material.tabs.TabLayout>(R.id.tabLayout)
-        var tabFollowing = findViewById<com.google.android.material.tabs.TabItem>(R.id.tabFollowing)
+
 
 
         for(i in 0..tablayout.tabCount){
@@ -43,7 +68,7 @@ class FollowActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
     private fun loadFragment(fragment: Fragment) {
         // load fragment
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragmentFollow, fragment)
+        transaction.replace(R.id.container, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
     }
