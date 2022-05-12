@@ -1,14 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PublicationFragment">
+    android:background="@drawable/img_1"
+    tools:context=".ui.publication.PublicationFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        app:layout_scrollFlags="scroll|enterAlways">
 
-</FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:id="@+id/editTextPrice"
+                android:layout_width="327dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/round_edit_text_white"
+                android:drawableEnd="@drawable/price"
+                android:ems="10"
+                android:hint="  prix"
+                android:inputType="number"
+                android:textColorHint="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/editTextMenu"
+                app:layout_constraintHorizontal_bias="0.484"
+                app:layout_constraintStart_toStartOf="@+id/editTextMenu"
+                app:layout_constraintTop_toBottomOf="@+id/editTextMenu" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView4"
+                android:layout_width="176dp"
+                android:layout_height="155dp"
+
+                android:layout_marginTop="32dp"
+
+                android:src="@drawable/takos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:background="@drawable/circle_shape"
+                android:src="@drawable/camera"
+                app:layout_constraintBottom_toBottomOf="@+id/circleImageView4"
+                app:layout_constraintEnd_toEndOf="@+id/circleImageView4"
+                app:layout_constraintHorizontal_bias="0.917"
+                app:layout_constraintStart_toStartOf="@+id/circleImageView4"
+                app:layout_constraintTop_toTopOf="@+id/circleImageView4"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <EditText
+                android:id="@+id/editTextMenu"
+                android:layout_width="327dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/round_edit_text_white"
+                android:drawableEnd="@drawable/mealnom"
+                android:ems="10"
+                android:hint=" Name"
+                android:inputType="textPersonName"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/circleImageView4" />
+
+            <EditText
+                android:id="@+id/editTextTextDescription"
+                android:layout_width="327dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="132dp"
+                android:background="@drawable/round_edit_text_white"
+                android:drawableLeft="@drawable/desc"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                app:layout_constraintEnd_toEndOf="@+id/textViewTag"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewTag"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPrice" />
+
+            <Button
+                android:id="@+id/btn_big_image_style"
+                android:layout_width="313dp"
+                android:layout_height="55dp"
+
+                android:background="@drawable/round_background"
+                android:text="Publier"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.504"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.897" />
+
+            <TextView
+                android:id="@+id/textViewTag"
+
+                android:layout_width="327dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/round_edit_text_white"
+
+                android:hint=" #tag"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.487"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPrice" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="37dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/ic_baseline_add_circle_24"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewTag"
+                app:layout_constraintEnd_toEndOf="@+id/textViewTag"
+                app:layout_constraintTop_toTopOf="@+id/textViewTag"
+                app:layout_constraintVertical_bias="0.431" />
+
+            <EditText
+                android:id="@+id/editTextNumberplat"
+                android:layout_width="327dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+
+                android:background="@drawable/round_edit_text_white"
+                android:drawableLeft="@drawable/count"
+                android:ems="10"
+                android:hint="                 Nombre de plat"
+                android:inputType="number"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.512"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTag" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
