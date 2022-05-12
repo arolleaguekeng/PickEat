@@ -17,7 +17,7 @@ RecyclerView.Adapter<HomeCardAdapter.MyViewHolder>()
         var nameuser: TextView = viewItem.findViewById(R.id.name_user)
         var info: TextView = viewItem.findViewById(R.id.infoH)
         var description: TextView = viewItem.findViewById(R.id.descriptionH)
-        var photo: ImageView = viewItem.findViewById(R.id.recyclerView2)
+
 
     }
 
@@ -30,7 +30,7 @@ RecyclerView.Adapter<HomeCardAdapter.MyViewHolder>()
         holder.description.text = homelist[position].descriptions
         holder.nameuser.text=homelist[position].nameuser
         holder.info.text=homelist[position].info
-        holder.photo.setImageResource(homelist[position].images)
+
     }
 
     override fun getItemCount(): Int {
