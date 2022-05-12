@@ -1,6 +1,5 @@
 package cm.pam.pickeat.ui.menu_search
 
-import Publication
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -18,8 +17,8 @@ import androidx.recyclerview.widget.RecyclerView
 import cm.pam.pickeat.R
 import cm.pam.pickeat.Service.adapters.MenuAdapter
 import cm.pam.pickeat.databinding.FragmentMenuSearchBinding
-import cm.pam.pickeat.model.Meal
-import cm.pam.pickeat.model.Menu
+import cm.pam.pickeat.models.Menu
+import cm.pam.pickeat.models.Publication
 import cm.pam.pickeat.ui.home.HomeFragment
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup

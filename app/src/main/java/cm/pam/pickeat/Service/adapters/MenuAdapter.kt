@@ -1,16 +1,15 @@
 package cm.pam.pickeat.Service.adapters
 
-import Publication
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import cm.pam.pickeat.R
-import cm.pam.pickeat.model.Menu
+import cm.pam.pickeat.models.Menu
+import cm.pam.pickeat.models.Publication
 
 
 class MenuAdapter(private val menuList: ArrayList<Menu>):
@@ -77,7 +76,7 @@ class MenuAdapter(private val menuList: ArrayList<Menu>):
         var average: Double = 0.0
        if(!publicationModels.isNullOrEmpty()){
            publicationModels!!.forEach{
-               average += it.rate
+               //average += it.rate
            }
            return average/publicationModels.size
        }

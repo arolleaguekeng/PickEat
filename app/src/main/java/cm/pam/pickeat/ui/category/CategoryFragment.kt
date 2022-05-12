@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import cm.pam.pickeat.R
 import cm.pam.pickeat.Service.adapters.CategoryAdapter
 import cm.pam.pickeat.databinding.FragmentCategoryBinding
-import cm.pam.pickeat.model.Category
+import cm.pam.pickeat.models.Category
 import cm.pam.pickeat.ui.home.HomeFragment
 import cm.pam.pickeat.ui.menu_search.MenuSearchFragment
 
@@ -34,14 +34,6 @@ class CategoryFragment : Fragment() {
     }
 
     private var categories = arrayListOf<Category>(
-        Category("Cameroonian", R.drawable.category_1),
-        Category("Traditional Cameroonian", R.drawable.category_2),
-        Category("Fast-Fod", R.drawable.category_3),
-        Category("Asiatic Meal", R.drawable.category_4),
-        Category("European Meal", R.drawable.category_5),
-        Category("English Meal", R.drawable.category_6),
-        Category("Drink", R.drawable.category_7),
-        Category("Cake", R.drawable.category_8)
     )
     lateinit var binding: FragmentCategoryBinding
     override fun onCreateView(
@@ -71,7 +63,7 @@ class CategoryFragment : Fragment() {
         var fragment = MenuSearchFragment()
         var selectedCategory = categories[position]
         var arguments = Bundle()
-        arguments.putString("title", selectedCategory.title)
+        arguments.putString("title", selectedCategory.categoryName)
         fragment.arguments = arguments
         activity?.supportFragmentManager
             ?.beginTransaction()?.replace(R.id.container, fragment)

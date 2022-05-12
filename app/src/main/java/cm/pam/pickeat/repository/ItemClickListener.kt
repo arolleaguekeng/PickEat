@@ -1,7 +1,7 @@
 package cm.pam.pickeat.repository
 
 import android.view.View
-import cm.pam.pickeat.model.User
+import cm.pam.pickeat.models.User
 
 interface ItemClickListener {
 

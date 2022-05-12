@@ -1,6 +1,5 @@
 package cm.pam.pickeat.ui.profile
 
-import Publication
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
@@ -13,20 +12,16 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.ViewPager
 import cm.pam.pickeat.FollowActivity
 import cm.pam.pickeat.R
-import cm.pam.pickeat.Service.adapters.PublicationAdapter
-import cm.pam.pickeat.Service.adapters.UserAdapter
 import cm.pam.pickeat.Service.adapters.ViewPageAdapter
 import cm.pam.pickeat.databinding.FragmentProfileBinding
+import cm.pam.pickeat.models.Publication
 import cm.pam.pickeat.repository.*
-import cm.pam.pickeat.ui.home.HomeFragment
 import cm.pam.pickeat.ui.orders.FragmentCurrentOrders
 import cm.pam.pickeat.ui.orders.FragmentOrders
 import cm.pam.pickeat.ui.sarterApp.Authentification.AuthentificationPhone
-import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
 import java.io.File
 

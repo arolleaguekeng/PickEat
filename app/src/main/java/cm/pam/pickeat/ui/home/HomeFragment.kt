@@ -1,6 +1,5 @@
 package cm.pam.pickeat.ui.home
 
-import Publication
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,6 +14,10 @@ import cm.pam.pickeat.Service.adapters.MenuAdapter
 import cm.pam.pickeat.Service.adapters.UserAdapter
 import cm.pam.pickeat.databinding.FragmentHomeBinding
 import cm.pam.pickeat.model.*
+import cm.pam.pickeat.models.Category
+import cm.pam.pickeat.models.Menu
+import cm.pam.pickeat.models.Publication
+import cm.pam.pickeat.models.User
 import cm.pam.pickeat.ui.category.CategoryFragment
 import cm.pam.pickeat.ui.menu_search.MenuSearchFragment
 
@@ -83,7 +86,7 @@ class HomeFragment : Fragment() ,View.OnClickListener {
         var fragment = MenuSearchFragment()
         var selectedCategory = categories[position]
         var arguments = Bundle()
-        arguments.putString("title", selectedCategory.title)
+        arguments.putString("title", selectedCategory.categoryName)
         fragment.arguments = arguments
         loadFragment(fragment)
     }

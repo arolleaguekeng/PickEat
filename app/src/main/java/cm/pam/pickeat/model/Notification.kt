@@ -1,25 +1,30 @@
-package cm.pam.pickeat.model
+package cm.pam.pickeat.models
 
 import android.os.Parcel
 import android.os.Parcelable
 
-data class Notification(val authorId: Long, val receiverId: Long,
-                        val title: String, val notificationId: Int, val message: String):Parcelable {
+data class Notification(
+    val authorId: Int,
+    val message: String,
+    val notificationId: Int,
+    val receiverid: Int,
+    val title: String
+) : Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readLong(),
-        parcel.readLong(),
+        parcel.readInt(),
         parcel.readString()!!,
+        parcel.readInt(),
         parcel.readInt(),
         parcel.readString()!!
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeLong(authorId)
-        parcel.writeLong(receiverId)
-        parcel.writeString(title)
-        parcel.writeInt(notificationId)
+        parcel.writeInt(authorId)
         parcel.writeString(message)
+        parcel.writeInt(notificationId)
+        parcel.writeInt(receiverid)
+        parcel.writeString(title)
     }
 
     override fun describeContents(): Int {

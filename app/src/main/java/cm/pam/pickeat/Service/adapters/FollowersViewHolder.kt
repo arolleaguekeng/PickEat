@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import cm.pam.pickeat.R
-import cm.pam.pickeat.model.User
+import cm.pam.pickeat.models.User
 import cm.pam.pickeat.ui.friend.list.FriendListFragment
 
 class FollowersViewHolder(view: View): RecyclerView.ViewHolder(view) {
@@ -23,16 +23,16 @@ class FollowersViewHolder(view: View): RecyclerView.ViewHolder(view) {
     fun bindData(user: User){
         textName.text = user.name
         followNumber.text = "12"+" rate follower"
-        imageProfil.setImageResource(user.profile)
+        //imageProfil.setImageResource(user.profile)
         var test = 0
 
         for(i in 0..FriendListFragment.FollowList.lastIndex){
 
-            if(user.phoneNumber == FriendListFragment.FollowList[i].followedId && FriendListFragment.CurrentUser.phoneNumber == FriendListFragment.FollowList[i].followerId) {
+            /*if(user.phoneNumber == FriendListFragment.FollowList[i].followedId && FriendListFragment.CurrentUser.phoneNumber == FriendListFragment.FollowList[i].followerId) {
                 FriendListFragment.follow = true
                 test += 1
                 break
-            }
+            }*/
 
         }
 

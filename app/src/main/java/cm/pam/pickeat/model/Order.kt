@@ -1,29 +1,36 @@
-package cm.pam.pickeat.model
+package cm.pam.pickeat.models
 
 import android.os.Parcel
 import android.os.Parcelable
-import java.util.*
 
-data class Order(val orderId: Int, val authorId: Long, val receiverId: Long,
-                 val publicationId: Int, val status: Boolean, var orderDate: Date, val quantity: Int):Parcelable{
+data class Order(
+    val authorId: Int,
+    val orderDate: String,
+    val orderId: Int,
+    val publicationId: Int,
+    val quantity: Int,
+    val receiverId: Int,
+    val status: String
+) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
-        parcel.readLong(),
-        parcel.readLong(),
+        parcel.readString()!!,
         parcel.readInt(),
-        parcel.readByte() != 0.toByte(),
-        TODO("orderDate"),
-        parcel.readInt()
+        parcel.readInt(),
+        parcel.readInt(),
+        parcel.readInt(),
+        parcel.readString()!!
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(authorId)
+        parcel.writeString(orderDate)
         parcel.writeInt(orderId)
-        parcel.writeLong(authorId)
-        parcel.writeLong(receiverId)
         parcel.writeInt(publicationId)
-        parcel.writeByte(if (status) 1 else 0)
         parcel.writeInt(quantity)
+        parcel.writeInt(receiverId)
+        parcel.writeString(status)
     }
 
     override fun describeContents(): Int {

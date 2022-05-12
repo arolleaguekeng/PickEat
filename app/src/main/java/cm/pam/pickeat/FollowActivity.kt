@@ -1,27 +1,14 @@
 package cm.pam.pickeat
 
-import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import cm.pam.pickeat.Service.adapters.ViewPageAdapter
-import cm.pam.pickeat.model.Follower
-import cm.pam.pickeat.model.User
-import cm.pam.pickeat.repository.ItemClickListener
 import cm.pam.pickeat.ui.friend.following.FollowingListFragment
 import cm.pam.pickeat.ui.friend.list.FriendListFragment
-import cm.pam.pickeat.ui.home.HomeViewModel
-import cm.pam.pickeat.ui.profile.ProfileFragment
 import com.google.android.material.tabs.TabLayout
-import java.time.Instant
 import java.util.*
 
 class FollowActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
@@ -41,14 +28,6 @@ class FollowActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
 
         viewPager.adapter = fragmentAdapter
         tablayout.setupWithViewPager(viewPager)
-
-
-
-
-
-        toolBar.title = FriendListFragment.CurrentUser.name
-
-
 
 
         for(i in 0..tablayout.tabCount){

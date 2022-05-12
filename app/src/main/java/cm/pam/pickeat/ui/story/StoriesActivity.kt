@@ -15,9 +15,10 @@ import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import cm.pam.pickeat.*
-import cm.pam.pickeat.model.Story
-import cm.pam.pickeat.repository.RestMenu
-import cm.pam.pickeat.repository.RestStory
+import cm.pam.pickeat.models.Menu
+import cm.pam.pickeat.models.Story
+import cm.pam.pickeat.services.MenuRepository
+import cm.pam.pickeat.services.StoryRepository
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -36,8 +37,8 @@ class StoriesActivity : AppCompatActivity(), StoriesProgressView.StoriesListener
     lateinit var storiesProgressView: StoriesProgressView
     lateinit var imageView: ImageView
     lateinit var button: FloatingActionButton
-    lateinit var restStory: RestStory
-    lateinit var selectedMenu: RestMenu
+    private lateinit var restStory: StoryRepository
+    lateinit var selectedMenu: Menu
     var images: ArrayList<Bitmap> = ArrayList()
     var pressTime: Long = 0L
     var limit: Long = 500L
@@ -70,8 +71,8 @@ class StoriesActivity : AppCompatActivity(), StoriesProgressView.StoriesListener
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
         WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
-        selectedMenu = intent.getParcelableExtra<RestMenu>("menu")!!
-        restStory = RestStory()
+        selectedMenu = intent.getParcelableExtra<Menu>("menu")!!
+        restStory = StoryRepository()
 
         imageView = findViewById(R.id.image)
         storiesProgressView = findViewById(R.id.stories)
@@ -93,8 +94,9 @@ class StoriesActivity : AppCompatActivity(), StoriesProgressView.StoriesListener
                 images.add(it.image!!.toBitmap()!!)
         }
     }
+
     private fun playStory(){
-        restStory.getStory { st -> getStory(st!!) }
+        restStory.getMenuStories(0){ st -> getStory(st!!) }
         if(images.size!=0) {
 
             findViewById<RelativeLayout>(R.id.nothing).visibility = View.GONE
@@ -170,10 +172,10 @@ class StoriesActivity : AppCompatActivity(), StoriesProgressView.StoriesListener
     }
 
     private fun saveStory(bitmap: String?){
-        try{
+        /*try{
             if(bitmap!=null){
                 var story = Story(
-                    currentUser!!.phoneNumber,
+                    0
                     selectedMenu!!.menuId,
                     0,
                     Date(),
@@ -189,7 +191,7 @@ class StoriesActivity : AppCompatActivity(), StoriesProgressView.StoriesListener
             }
         }catch (e: Exception){
             Toast.makeText(this, e.message, Toast.LENGTH_LONG*10000).show()
-        }
+        }*/
     }
 
     object ServiceBuilder {

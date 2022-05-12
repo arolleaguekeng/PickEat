@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import cm.pam.pickeat.R
-import cm.pam.pickeat.model.User
+import cm.pam.pickeat.models.User
 import de.hdodenhof.circleimageview.CircleImageView
 
 

@@ -18,7 +18,7 @@ class ProfileFriend : AppCompatActivity() {
         setContentView(view)
 
         binding.phonenumber.text = FriendListFragment.CurrentFollow!!.phoneNumber.toString()
-        binding.circleImageView.setImageResource(FriendListFragment.CurrentFollow!!.profile)
+        //binding.circleImageView.setImageResource(FriendListFragment.CurrentFollow!!.profile)
         binding.name.text = FriendListFragment.CurrentFollow!!.name
 
         if(FriendListFragment.follow){

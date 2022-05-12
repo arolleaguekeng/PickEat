@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import cm.pam.pickeat.R
-import cm.pam.pickeat.model.User
+import cm.pam.pickeat.models.User
 import cm.pam.pickeat.repository.ItemClickListener
 
 class FollowAdapter(var  items: MutableList<User>, private val itemClickListener: ItemClickListener): RecyclerView.Adapter<FollowersViewHolder>() {

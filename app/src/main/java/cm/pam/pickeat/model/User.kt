@@ -1,32 +1,33 @@
-package cm.pam.pickeat.model
+package cm.pam.pickeat.models
 
-import android.os.Build
 import android.os.Parcel
 import android.os.Parcelable
-import androidx.annotation.RequiresApi
-import cm.pam.pickeat.currentUser
-import java.util.*
 
-data class User(val phoneNumber: Long, val name: String?, val profile: Int
-                , val balance: Double, val locationId: Int): Parcelable {
-    @RequiresApi(Build.VERSION_CODES.Q)
+data class User(
+    val balance: Int,
+    val location: Location,
+    val locationId: Int,
+    val name: String,
+    val phoneNumber: Int,
+    val profile: String
+) : Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readLong(),
-        parcel.readString(),
-        parcel.readInt()!!,
-        parcel.readDouble(),
-        parcel.readInt()
-
-
+        parcel.readInt(),
+        parcel.readParcelable(Location::class.java.classLoader)!!,
+        parcel.readInt(),
+        parcel.readString()!!,
+        parcel.readInt(),
+        parcel.readString()!!
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeLong(phoneNumber)
-        parcel.writeString(name)
-        parcel.writeInt(profile)
-        parcel.writeDouble(balance)
+        parcel.writeInt(balance)
+        parcel.writeParcelable(location, flags)
         parcel.writeInt(locationId)
+        parcel.writeString(name)
+        parcel.writeInt(phoneNumber)
+        parcel.writeString(profile)
     }
 
     override fun describeContents(): Int {
@@ -34,7 +35,6 @@ data class User(val phoneNumber: Long, val name: String?, val profile: Int
     }
 
     companion object CREATOR : Parcelable.Creator<User> {
-        @RequiresApi(Build.VERSION_CODES.Q)
         override fun createFromParcel(parcel: Parcel): User {
             return User(parcel)
         }

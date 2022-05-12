@@ -1,19 +1,23 @@
-package cm.pam.pickeat.model
+package cm.pam.pickeat.models
 
 import android.os.Parcel
 import android.os.Parcelable
 
-data class Location(val locationId: Int, val city: String, val quater: String): Parcelable {
+data class Location(
+    val city: String,
+    val locationId: Int,
+    val quater: String
+) : Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readInt(),
         parcel.readString()!!,
+        parcel.readInt(),
         parcel.readString()!!
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(locationId)
         parcel.writeString(city)
+        parcel.writeInt(locationId)
         parcel.writeString(quater)
     }
 

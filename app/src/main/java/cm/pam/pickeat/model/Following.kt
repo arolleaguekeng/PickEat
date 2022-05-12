@@ -3,7 +3,7 @@ package cm.pam.pickeat.models
 import android.os.Parcel
 import android.os.Parcelable
 
-data class Follower(
+data class Following(
     val followedId: Int,
     val followerId: Int,
     val startAt: String
@@ -25,12 +25,12 @@ data class Follower(
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<Follower> {
-        override fun createFromParcel(parcel: Parcel): Follower {
-            return Follower(parcel)
+    companion object CREATOR : Parcelable.Creator<Following> {
+        override fun createFromParcel(parcel: Parcel): Following {
+            return Following(parcel)
         }
 
-        override fun newArray(size: Int): Array<Follower?> {
+        override fun newArray(size: Int): Array<Following?> {
             return arrayOfNulls(size)
         }
     }

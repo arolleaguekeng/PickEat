@@ -7,10 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import cm.pam.pickeat.R
-import cm.pam.pickeat.model.Category
-
-
-
+import cm.pam.pickeat.models.Category
 
 
 class CategoryAdapter(private val categoryModels : ArrayList<Category>, private val onCategoryClicked:(position: Int)->Unit) : RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
@@ -21,8 +18,8 @@ class CategoryAdapter(private val categoryModels : ArrayList<Category>, private 
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.name.text = categoryModels[position].title
-        holder.background.setImageResource(categoryModels[position].background)
+        holder.name.text = categoryModels[position].categoryName
+        //holder.background.setImageResource(categoryModels[position].background)
     }
 
     override fun getItemCount (): Int {
