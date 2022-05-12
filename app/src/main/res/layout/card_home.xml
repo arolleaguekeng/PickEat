@@ -122,11 +122,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/imagereycleview"
+            <ImageView
+                android:id="@+id/recyclerView2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:listitem="@layout/imagecardmeal" />
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/login" />
         </RelativeLayout>
 
 

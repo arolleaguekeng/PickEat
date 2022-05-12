@@ -36,31 +36,12 @@
         <entry key="..\:/Users/jarvis/AndroidStudioProjects/PickEat/app/src/main/res/menu/layout_popup_photo_menu.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/jarvis/AndroidStudioProjects/PickEat/app/src/main/res/menu/profile_option_menu.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/jarvis/AndroidStudioProjects/PickEat/app/src/main/res/menu/top_search.xml" value="0.22916666666666666" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/drawable/bg_linea_layo.xml" value="0.328" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/card_home.xml" value="0.38697916666666665" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/card_home_list.xml" value="0.38697916666666665" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/commande_card.xml" value="0.33" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/dialog_command.xml" value="0.38697916666666665" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/fragment_add_publication.xml" value="0.38697916666666665" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/fragment_dashboard.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/fragment_favory.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/fragment_follow.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/fragment_followers_list.xml" value="0.2015625" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/fragment_following_list.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/fragment_friend_list.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/fragment_home.xml" value="0.18409316154608524" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/fragment_profile.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/fragment_publication.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/imagecardmeal.xml" value="0.38697916666666665" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/item_friend.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/mwill/AndroidStudioProjects/PickEat2.1/app/src/main/res/layout/publication_item.xml" value="0.38697916666666665" />
         <entry key="..\:/projet/PickEat/app/src/main/res/layout/activity_main.xml" value="0.22418478260869565" />
         <entry key="..\:/projet/PickEat/app/src/main/res/layout/fragment_category.xml" value="0.22644927536231885" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
